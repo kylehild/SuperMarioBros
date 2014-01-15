@@ -1,0 +1,2250 @@
+fileFormatVersion: 2
+guid: a0b14f5b183e34ed7a59b62f9eec21e8
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: NES - Super Mario Bros - Mario Bros_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 516
+        width: 51
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 480
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 480
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 80
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_4
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 496
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_5
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 499
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_6
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 496
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_7
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 497
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_8
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 496
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_9
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 496
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_10
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 497
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 496
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_12
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 496
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_13
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 496
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_14
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 503
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 503
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_16
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 504
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_17
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 503
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_18
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 480
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_19
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 480
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_20
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 480
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_21
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 480
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_22
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 480
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_23
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 480
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_24
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 480
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_25
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 468
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_26
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 468
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_27
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 432
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_28
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 432
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_29
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 448
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_30
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 451
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_31
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 448
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_32
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 449
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_33
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 448
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_34
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 448
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_35
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 449
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_36
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_37
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 448
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_38
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 448
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_39
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 432
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_40
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 432
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_41
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 432
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_42
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 432
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_43
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 432
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_44
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 432
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_45
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 432
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_46
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 419
+        width: 51
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_47
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 384
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_48
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 384
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_49
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 400
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_50
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 403
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_51
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 400
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_52
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 401
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_53
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 400
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_54
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 400
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_55
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 401
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_56
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 400
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_57
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 400
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_58
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 400
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_59
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 406
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_60
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 406
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 406
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_62
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 406
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_63
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 384
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_64
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 384
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_65
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 384
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_66
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 384
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_67
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 384
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_68
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 384
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_69
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 384
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_70
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 372
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_71
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 336
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_72
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 336
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_73
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 352
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_74
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 355
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_75
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 352
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_76
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 353
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_77
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 352
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_78
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 352
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_79
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 353
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_80
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 352
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_81
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 352
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_82
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 352
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_83
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 359
+        width: 47
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_84
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 347
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_85
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 336
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_86
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 336
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_87
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 336
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_88
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 336
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_89
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 336
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_90
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 336
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_91
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 336
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_92
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 335
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_93
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 335
+        width: 52
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_94
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 288
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_95
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 288
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_96
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 304
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_97
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 307
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_98
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 304
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_99
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 305
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_100
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 304
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_101
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 304
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_102
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 305
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_103
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 304
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_104
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 304
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_105
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 304
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_106
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 288
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_107
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 288
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_108
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 288
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_109
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 288
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_110
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 288
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_111
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 288
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_112
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_113
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_114
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 240
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_115
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 256
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_116
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 259
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_117
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 256
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_118
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 257
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_119
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 256
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_120
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 256
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_121
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 257
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_122
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_123
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 256
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_124
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 256
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_125
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 240
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_126
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 240
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_127
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 240
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_128
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 240
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_129
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 240
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_130
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 240
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_131
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 240
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_132
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 229
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_133
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 229
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_134
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 228
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_135
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 229
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_136
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 229
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_137
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_138
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 192
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_139
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 208
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_140
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 211
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_141
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 208
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_142
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 209
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_143
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 208
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_144
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 208
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_145
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 209
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_146
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 208
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_147
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 208
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_148
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 208
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_149
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 192
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_150
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 192
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_151
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 192
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_152
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 192
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_153
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 192
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_154
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 192
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_155
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_156
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_157
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 144
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_158
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 160
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_159
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 163
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_160
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 160
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_161
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 161
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_162
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 160
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_163
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 160
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_164
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 161
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_165
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_166
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 160
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_167
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 160
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_168
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 144
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_169
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 144
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_170
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 144
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_171
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 144
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_172
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 144
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_173
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 144
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_174
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_175
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 131
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_176
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 131
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_177
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 131
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_178
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 131
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_179
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_180
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 96
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_181
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 112
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_182
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 115
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_183
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 112
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_184
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 113
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_185
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 112
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_186
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 112
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_187
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 113
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_188
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 112
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_189
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 112
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_190
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 112
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_191
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 96
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_192
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 96
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_193
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 96
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_194
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 96
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_195
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 96
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_196
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 96
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_197
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_198
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 83
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_199
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 83
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_200
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 83
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_201
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 83
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_202
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_203
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 48
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_204
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 64
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_205
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 67
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_206
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 64
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_207
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 65
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_208
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 64
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_209
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 64
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_210
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 65
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_211
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_212
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 64
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_213
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 64
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_214
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 73
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_215
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 63
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_216
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 73
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_217
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 64
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_218
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 63
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_219
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 48
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_220
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 48
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_221
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 48
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_222
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 48
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_223
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 48
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_224
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 48
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_225
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_226
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_227
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_228
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 16
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_229
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 19
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_230
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 16
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_231
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 17
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_232
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 16
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_233
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 16
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_234
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 17
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_235
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 16
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_236
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 16
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_237
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 16
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_238
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 0
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_239
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_240
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_241
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 0
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_242
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_243
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: NES - Super Mario Bros - Mario Bros_244
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
