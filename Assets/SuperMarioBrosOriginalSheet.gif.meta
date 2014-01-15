@@ -1,0 +1,2722 @@
+fileFormatVersion: 2
+guid: e43da631898e14f588d1b769643d87d7
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: SuperMarioBrosOriginalSheet_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 857
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 857
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 857
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 857
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 857
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_5
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 857
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_6
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 857
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_7
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 857
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_8
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 857
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_9
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 857
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 857
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_11
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 857
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_12
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 857
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 857
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_14
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 857
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_15
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 834
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 834
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_17
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 834
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_18
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 834
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_19
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 834
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_20
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 834
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_21
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 834
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_22
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 834
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_23
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 834
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_24
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 834
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_25
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 834
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_26
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 834
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_27
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 834
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_28
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 834
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_29
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 794
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_30
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 794
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_31
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 794
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_32
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 794
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_33
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 794
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_34
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 794
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_35
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 794
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_36
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 794
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_37
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 794
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_38
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 794
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_39
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 794
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_40
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 794
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_41
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 794
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_42
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 794
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_43
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 794
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_44
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 771
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_45
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 771
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_46
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 771
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_47
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 771
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_48
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 771
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_49
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 771
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_50
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 771
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_51
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 771
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_52
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 771
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_53
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 771
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_54
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 771
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_55
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 771
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_56
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 771
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_57
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 771
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_58
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 733
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_59
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 733
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_60
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 733
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_61
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 733
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_62
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 733
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_63
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 733
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_64
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 733
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_65
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 733
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_66
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 733
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_67
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 733
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_68
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 733
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_69
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 733
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_70
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 733
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_71
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 733
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_72
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 733
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_73
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 708
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_74
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 708
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_75
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_76
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 708
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_77
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 708
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_78
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 708
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_79
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 708
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_80
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 708
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_81
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 708
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_82
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 708
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_83
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 708
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_84
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 708
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_85
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 708
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_86
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 708
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_87
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 671
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_88
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 671
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_89
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 671
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_90
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 671
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_91
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 671
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_92
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 671
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_93
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 671
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_94
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 671
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_95
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 671
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_96
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 671
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_97
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 671
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_98
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 671
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_99
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 671
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_100
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 671
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_101
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 671
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_102
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 651
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_103
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 651
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_104
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 651
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_105
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 651
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_106
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 651
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_107
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 651
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_108
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 651
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_109
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 651
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_110
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 651
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_111
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 651
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_112
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 651
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_113
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 651
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_114
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 651
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_115
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 651
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_116
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 613
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_117
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 613
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_118
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 613
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_119
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 613
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_120
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 613
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_121
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 613
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_122
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 613
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_123
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 613
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_124
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 613
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_125
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 613
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_126
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 613
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_127
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 613
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_128
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 613
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_129
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 613
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_130
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 613
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_131
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 592
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_132
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 592
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_133
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_134
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 592
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_135
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 592
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_136
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 592
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_137
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 592
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_138
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 592
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_139
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 592
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_140
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 592
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_141
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 592
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_142
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 592
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_143
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 592
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_144
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 592
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_145
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 556
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_146
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 556
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_147
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 556
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_148
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 556
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_149
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 556
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_150
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 556
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_151
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 556
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_152
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 556
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_153
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 556
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_154
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 556
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_155
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 556
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_156
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 556
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_157
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 556
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_158
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 556
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_159
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 556
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_160
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 536
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_161
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 536
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_162
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 536
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_163
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 536
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_164
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 536
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_165
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 536
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_166
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 536
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_167
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 536
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_168
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 536
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_169
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 536
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_170
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 536
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_171
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 536
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_172
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 536
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_173
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 536
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_174
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 506
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_175
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 507
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_176
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 476
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_177
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 476
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_178
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 476
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_179
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 476
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_180
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 476
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_181
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 476
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_182
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 476
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_183
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 476
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_184
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 476
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_185
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 476
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_186
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 476
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_187
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 437
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_188
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 437
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_189
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 437
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_190
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 437
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_191
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 407
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_192
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 407
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_193
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 407
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_194
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 407
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_195
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 407
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_196
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 407
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_197
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 407
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_198
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 407
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_199
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 407
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_200
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 407
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_201
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 407
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_202
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 407
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_203
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 407
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_204
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_205
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_206
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_207
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_208
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_209
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_210
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_211
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_212
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_213
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_214
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_215
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 384
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_216
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_217
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_218
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_219
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 359
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_220
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_221
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_222
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_223
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 359
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_224
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_225
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_226
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 359
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_227
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 359
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_228
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 329
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_229
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 329
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_230
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 329
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_231
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 329
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_232
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 329
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_233
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 329
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_234
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 329
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_235
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 329
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_236
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 329
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_237
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 329
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_238
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 329
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_239
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 329
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_240
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 329
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_241
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 329
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_242
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 329
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_243
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 329
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_244
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 329
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_245
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 329
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_246
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 329
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_247
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 329
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_248
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 329
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_249
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 307
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_250
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 307
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_251
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 307
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_252
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 307
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_253
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 307
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_254
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 307
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_255
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 307
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_256
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 287
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_257
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 251
+        width: 16
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_258
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 289
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_259
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 232
+        width: 65
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_260
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 272
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_261
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 281
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_262
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 273
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_263
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 237
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_264
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 247
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_265
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 265
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_266
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 248
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_267
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 189
+        width: 51
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_268
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 183
+        width: 49
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_269
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 159
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_270
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 159
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_271
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 159
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_272
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 159
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_273
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 154
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_274
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 153
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_275
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 156
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_276
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 156
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_277
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 156
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_278
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 156
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_279
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 117
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_280
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 118
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_281
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 120
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_282
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 121
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_283
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 121
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_284
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 120
+        width: 51
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_285
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 77
+        width: 49
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_286
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 32
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_287
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 38
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_288
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 34
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_289
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 7
+        width: 16
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_290
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 42
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_291
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 34
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_292
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 19
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_293
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 26
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_294
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 12
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_295
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 18
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: SuperMarioBrosOriginalSheet_296
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 9
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
