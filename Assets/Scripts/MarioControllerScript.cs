@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MarioControllerScript : MonoBehaviour {
 
-	public float 	speed = 10f, run = 1f;
+	public float 	speed = 5f;
 	bool 			facingRight = true;
 	Animator		anim;
 
@@ -14,16 +14,19 @@ public class MarioControllerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate() {
-		float h = Input.GetAxis ("Horizontal");
-		anim.SetBool ("Moving", h != 0);
+		float xAxisValue = Input.GetAxis("Horizontal");
+		float yAxisValue = Input.GetAxis("Vertical");
+		anim.SetBool ("Sliding", false);
+
+		anim.SetBool ("Moving", xAxisValue != 0);
 
 		if(Input.GetKey(KeyCode.Z)){
 			anim.SetBool ("Running", true);
-			run = 3f;
+			speed = 10f;
 		}
 		else{
 			anim.SetBool ("Running", false);
-			run = 1f;
+			speed = 5;
 		}
 
 
@@ -32,12 +35,16 @@ public class MarioControllerScript : MonoBehaviour {
 		else
 			anim.SetBool ("Crouching", false);
 
-		rigidbody2D.velocity = new Vector2 (h * speed/10 * run, rigidbody2D.velocity.y);
+		rigidbody2D.velocity = new Vector2 (xAxisValue * speed, rigidbody2D.velocity.y);
 
-		if (h > 0 && !facingRight)
+		if (xAxisValue > 0 && !facingRight){
+			if(anim.GetBool("Moving")) anim.SetBool("Sliding", true);
 			Flip ();
-		else if(h < 0 && facingRight)
+		}
+		else if(xAxisValue < 0 && facingRight){
+			if(anim.GetBool("Moving")) anim.SetBool("Sliding", true);
 			Flip ();
+		}
 	}
 
 	void Flip(){
