@@ -3,62 +3,99 @@ using System.Collections;
 
 public class MarioControllerScript : MonoBehaviour {
 
-	public float 	speed = 5f;
-	public float	jumpSpeed = 2f;
-	public float	jumpAcc = 1f;
+	public float 	speed = 10f;
+	public float	jumpForce = 500f;
+	public float	jumpTime = 0f;
+	public float 	heldVelocity = 6.3f;
 	public bool 	facingRight = true;
 	public bool		grounded = true;
+	public bool 	jump = false;
+	Transform 		groundCheck;
+
 	Animator		anim;
 
 	// Use this for initialization
 	void Start() {
+		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator> ();
+	}
+
+	void Update()
+	{
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+
+		// If the you want to jump and the player is grounded then set jump.
+		if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) 
+		   && grounded){
+			jump = true;
+		}
+
+		if(anim.GetBool("Jump") && grounded){
+			anim.SetBool("Jump", false);
+		}
+
+		if(Input.GetKey(KeyCode.DownArrow))
+			anim.SetBool ("Crouch", true);
+		else
+			anim.SetBool ("Crouch", false);
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate() {
 		float xAxisValue = Input.GetAxis("Horizontal");
-		float yAxisValue = Input.GetAxis("Vertical");
-
 		Vector2 vel = rigidbody2D.velocity;
 
-		anim.SetBool ("Sliding", false);
-		anim.SetBool ("Moving", xAxisValue != 0);
-
 		if(Input.GetKey(KeyCode.Z)){
-			anim.SetBool ("Running", true);
 			speed = 10f;
 		}
 		else{
-			anim.SetBool ("Running", false);
-			speed = 5;
-		}
-		vel.x = xAxisValue * speed;
-
-		if(Input.GetKeyDown(KeyCode.X) || 
-		   Input.GetKeyDown(KeyCode.Space) ||
-		   Input.GetKeyDown(KeyCode.UpArrow)){
-			if(grounded) vel.y = jumpSpeed;
-		}
-		if(Input.GetKey(KeyCode.X) || 
-		   Input.GetKey(KeyCode.Space) ||
-		   Input.GetKey(KeyCode.UpArrow)){
-			if(!grounded) vel.y += jumpAcc;
+			speed = 5f;
 		}
 
-		if(Input.GetKey(KeyCode.DownArrow))
-			anim.SetBool ("Crouching", true);
-		else
-			anim.SetBool ("Crouching", false);
+		if(!anim.GetBool("Slide")){
+			vel.x = xAxisValue * speed;
+			rigidbody2D.velocity = vel;
+			anim.SetFloat ("Speed", Mathf.Abs(vel.x));
+		}
+		else if(rigidbody2D.velocity.x == 0)
+			anim.SetBool ("Slide", false);
+		else{
+			if(rigidbody2D.velocity.x < -0.05f) 
+				vel.x = rigidbody2D.velocity.x + 0.05f;
+			else if(rigidbody2D.velocity.x > 0.05f) 
+				vel.x = rigidbody2D.velocity.x - 0.05f;
+			else 
+				vel.x = 0;
 
-		rigidbody2D.velocity = vel;
+			rigidbody2D.velocity = vel;
+			anim.SetFloat ("Speed", Mathf.Abs(vel.x));
+		}
+
+		if(jump){
+			anim.SetBool ("Jump", true);
+			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+			jump = false;
+			jumpTime = 15f;
+			if(anim.GetFloat("Speed") > 5f) heldVelocity += 1f;
+		}
+
+		if((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)) 
+		   && jumpTime != 0){
+			jumpTime--;
+			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, rigidbody2D.velocity.y+heldVelocity);
+			rigidbody2D.AddForce(new Vector2(0f, heldVelocity*jumpTime));
+		}
+		else{
+			jumpTime = 0;
+			heldVelocity = 6.3f;
+		}
 
 		if (xAxisValue > 0 && !facingRight){
-			if(anim.GetBool("Moving")) anim.SetBool("Sliding", true);
+			if(anim.GetFloat("Speed") > 0) anim.SetBool("Slide", true);
 			Flip ();
 		}
 		else if(xAxisValue < 0 && facingRight){
-			if(anim.GetBool("Moving")) anim.SetBool("Sliding", true);
+			if(anim.GetFloat("Speed") > 0) anim.SetBool("Slide", true);
 			Flip ();
 		}
 	}
@@ -68,14 +105,5 @@ public class MarioControllerScript : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}
-
-	void OnTriggerEnter2D(Collider2D other){
-		grounded = true;
-		anim.SetBool ("Jumping", false);
-	}
-	void OnTriggerExit2D(Collider2D other){
-		grounded = false;
-		anim.SetBool ("Jumping", true);
 	}
 }
