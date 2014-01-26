@@ -22,7 +22,15 @@ public class MarioControllerScript : MonoBehaviour {
 
 	void Update()
 	{
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		Vector3 leftPos = transform.position;
+		leftPos.x -= 0.5f;
+		RaycastHit2D left = Physics2D.Linecast(leftPos, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		RaycastHit2D center = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		Vector3 rightPos = transform.position;
+		rightPos.x += 0.5f;
+		RaycastHit2D right = Physics2D.Linecast(rightPos, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+
+		grounded = (left || center || right);  
 
 		// If the you want to jump and the player is grounded then set jump.
 		if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) 
@@ -106,4 +114,21 @@ public class MarioControllerScript : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	/*void OnCollision2(Collision2D collision){
+
+		RaycastHit2D myRayHit = Physics2D.Linecast(transform.position, collision.gameObject.transform.position);
+		
+		Vector2 myNormal = myRayHit.normal;
+		myNormal = myRayHit.transform.TransformDirection(myNormal);
+		Debug.Log(myNormal);
+		
+
+		if (myNormal.x != 0f && myNormal.y == 0) {
+			Debug.Log("Setting speed to 0");
+			Vector2 vel = gameObject.rigidbody2D.velocity;
+			vel.x = 0;
+			gameObject.rigidbody2D.velocity = vel;
+		}
+	}*/
 }
