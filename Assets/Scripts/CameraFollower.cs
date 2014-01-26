@@ -5,11 +5,12 @@ public class CameraFollower : MonoBehaviour {
 
 	public Transform 	poi;
 	public float		u;
-	public Vector3		offset = new Vector3(3.7f, 3f, -5);
+	public Vector3		offset = new Vector3(0f, 4.8f, -5);
+	public Vector3		start = new Vector3(3.8f, 4.8f, -5);
 
 	// Use this for initialization
 	void Start() {
-		transform.position = poi.position + offset;
+		transform.position = poi.position + start;
 	}
 
 	// Update is called once per frame
