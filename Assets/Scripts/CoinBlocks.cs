@@ -34,7 +34,7 @@ public class CoinBlocks : MonoBehaviour {
 		}
 
 		if(boundary.transform.position.x-1.0f > transform.position.x+0.5f)
-			Destroy(this);
+			Destroy(gameObject);
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){

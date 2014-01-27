@@ -7,9 +7,12 @@ public class MarioControllerScript : MonoBehaviour {
 	public float	jumpForce = 500f;
 	public float	jumpTime = 0f;
 	public float 	heldVelocity = 6.3f;
+	public float 	deathTime = 0f;
+	public float 	deathForce = 1000f;
 	public bool 	facingRight = true;
 	public bool		grounded = true;
 	public bool 	jump = false;
+	private bool 	dead = false;
 	Transform 		groundCheck;
 
 	Animator		anim;
@@ -32,6 +35,23 @@ public class MarioControllerScript : MonoBehaviour {
 		RaycastHit2D center = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		grounded = (left || center || right);  
+
+		if(anim.GetBool("Death") && !dead){
+			Vector2 newVel = new Vector2(0f, 0f);
+			rigidbody2D.velocity = newVel;
+			dead = true;
+			deathTime = 15f;
+			//Time.timeScale = 0;
+		}
+
+		if(deathTime > 0) deathTime--;
+		else if(deathTime == 0 && dead){
+			Destroy(gameObject.collider2D);
+			rigidbody2D.AddForce(new Vector2(0f, deathForce));
+			deathTime = -1f;
+		}
+		else if(deathTime == -1f)
+			if(transform.position.y < -1.5f) Application.LoadLevel(Application.loadedLevelName);
 
 		// If the you want to jump and the player is grounded then set jump.
 		if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) 

@@ -36,7 +36,7 @@ public class BreakableBlock : MonoBehaviour {
 		}
 		
 		if(boundary.transform.position.x-1.0f > transform.position.x+0.5f)
-			Destroy(this);
+			Destroy(gameObject);
 	
 	}
 
