@@ -23,12 +23,13 @@ public class MarioControllerScript : MonoBehaviour {
 	void Update()
 	{
 		Vector3 leftPos = transform.position;
-		leftPos.x -= 0.5f;
+		leftPos.x -= 0.4f;
 		RaycastHit2D left = Physics2D.Linecast(leftPos, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
-		RaycastHit2D center = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 		Vector3 rightPos = transform.position;
-		rightPos.x += 0.5f;
+		rightPos.x += 0.4f;
 		RaycastHit2D right = Physics2D.Linecast(rightPos, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+
+		RaycastHit2D center = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		grounded = (left || center || right);  
 
