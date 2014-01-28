@@ -12,8 +12,10 @@ public class GoombaController : MonoBehaviour {
 	public bool 		killedMario = false;
 	private	GameObject	rightBoundary;
 	private Animator	anim;
-	private Vector2		pos;
-	private RaycastHit2D left, right, up1, up2, down1, down2;
+	public Collider2D	headCollider;
+	public Collider2D	bodyCollider;
+	public Collider2D	footCollider;
+	public Rigidbody2D	rigidBody;
 
 	// Use this for initialization
 	void Start () {
@@ -34,59 +36,16 @@ public class GoombaController : MonoBehaviour {
 			started = true;
 		}
 
-		if(started){
+		if(started && !squished){
 			Vector3 vel = rigidbody2D.velocity;
 			vel.x = speed;
-			if(squished || killedMario) vel.x = 0;
 			rigidbody2D.velocity = vel;
 		}
 
 		if(flipping != 0) flipping--;
 
-		if(squished){
-			if(squishTimer > 0) squishTimer--;
-			else DestroyObject(gameObject);
-		}
-		else{
-			pos = transform.position;
-			left =  Physics2D.Raycast(new Vector2(pos.x-0.5f, pos.y+0.5f), -Vector2.right, 0.1f);
-			right =  Physics2D.Raycast(new Vector2(pos.x+0.5f, pos.y+0.5f), Vector2.right, 0.1f);
-			up1 =  Physics2D.Raycast(new Vector2(pos.x+.375f, pos.y+1f), Vector2.up, 0.1f);
-			up2 =  Physics2D.Raycast(new Vector2(pos.x-.375f, pos.y+1f), Vector2.up, 0.1f);
-			down1 =  Physics2D.Raycast(new Vector2(pos.x+.375f, pos.y), -Vector2.up, 0.1f);
-			down2 =  Physics2D.Raycast(new Vector2(pos.x-.375f, pos.y), -Vector2.up, 0.1f);
-			
-			if((up1.transform != null && up1.collider.gameObject.name == "Mario")
-			   || (up2.transform != null && up2.collider.gameObject.name == "Mario")){
-				//Debug.DrawRay(new Vector2(pos.x, pos.y+1f), Vector2.up, Color.blue, 60);
-				anim.SetTrigger("Squished");
-				squished = true;
-			}
-			else if(left.transform != null && flipping == 0){
-				Debug.Log("hit on left");
-				if(left.collider.gameObject.name != "Mario"
-				   && left.collider.gameObject.layer != LayerMask.NameToLayer("Camera")) 
-						Flip ();
-				else if(left.collider.gameObject.name == "Mario"){ 
-					killedMario = true;
-					left.collider.gameObject.GetComponent<Animator>().SetBool("Death", true);
-				}
-			}
-			else if(right.transform != null && flipping == 0){
-				Debug.Log("hit on right");
-				if(right.collider.gameObject.name != "Mario"
-				   && right.collider.gameObject.layer != LayerMask.NameToLayer("Camera")) 
-					Flip ();
-				else if(right.collider.gameObject.name == "Mario"){
-					killedMario = true;
-					right.collider.gameObject.GetComponent<Animator>().SetBool("Death", true);
-				}
-			}
-			if((down1.transform != null && down1.collider.gameObject.name == "Mario")
-			   || (down2.transform != null && down2.collider.gameObject.name == "Mario")){
-				//Debug.Log("hit on bottom");
-			}
-		}
+		if(squished)
+			Invoke ("DestroyGoomba", squishTimer);
 	}
 
 	void Flip(){
@@ -95,6 +54,28 @@ public class GoombaController : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		speed *= -1;
-		flipping = 5f;
+		flipping = 2f;
+	}
+
+	void OnCollisionEnter2D(Collision2D collision){
+		if(collision.contacts[0].otherCollider == headCollider
+		   && collision.gameObject.name == "Mario"){
+			squished = true;
+			gameObject.layer = LayerMask.NameToLayer("Default");
+			DestroyObject(headCollider);
+			DestroyObject(bodyCollider);
+			DestroyObject(rigidBody);
+			DestroyObject(footCollider);
+			anim.SetTrigger("Squished");
+		}
+		else if(collision.contacts[0].otherCollider == bodyCollider){
+			if(collision.gameObject.name != "Mario" && flipping == 0f
+			   && collision.gameObject.layer != LayerMask.NameToLayer("Camera")) 
+				Flip ();
+		}
+	}
+
+	public void DestroyGoomba(){
+		Destroy(gameObject);
 	}
 }

@@ -10,32 +10,23 @@ public class MarioControllerScript : MonoBehaviour {
 	public float 	deathTime = 0f;
 	public float 	deathForce = 1000f;
 	public bool 	facingRight = true;
-	public bool		grounded = true;
-	public bool 	jump = false;
 	private bool 	dead = false;
-	Transform 		groundCheck;
+	
 
-	Animator		anim;
+	Animator			anim;
+	public Collider2D 	headCollider;
+	public Collider2D 	footCollider;
+	public Collider2D	triggerCollider;
+	public bool			grounded = false;
 
 	// Use this for initialization
 	void Start() {
-		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator> ();
 	}
 
 	void Update()
-	{
-		Vector3 leftPos = transform.position;
-		leftPos.x -= 0.4f;
-		RaycastHit2D left = Physics2D.Linecast(leftPos, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
-		Vector3 rightPos = transform.position;
-		rightPos.x += 0.4f;
-		RaycastHit2D right = Physics2D.Linecast(rightPos, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
-
-		RaycastHit2D center = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
-
-		grounded = (left || center || right);  
-
+	{ 
+		//death stuff
 		if(anim.GetBool("Death") && !dead){
 			Vector2 newVel = new Vector2(0f, 0f);
 			rigidbody2D.velocity = newVel;
@@ -46,31 +37,45 @@ public class MarioControllerScript : MonoBehaviour {
 
 		if(deathTime > 0) deathTime--;
 		else if(deathTime == 0 && dead){
-			Destroy(gameObject.collider2D);
+			Destroy(footCollider);
+			Destroy(triggerCollider);
+			Destroy(headCollider);
 			rigidbody2D.AddForce(new Vector2(0f, deathForce));
 			deathTime = -1f;
 		}
 		else if(deathTime == -1f)
 			if(transform.position.y < -1.5f) Application.LoadLevel(Application.loadedLevelName);
 
-		// If the you want to jump and the player is grounded then set jump.
+
+		// Jump stuff
 		if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) 
 		   && grounded){
-			jump = true;
+
+			anim.SetBool ("Jump", true);
+			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+			jumpTime = 15f;
+			if(anim.GetFloat("Speed") > 5f) heldVelocity += 1f;
+			grounded = false;
 		}
 
-		if(anim.GetBool("Jump") && grounded){
-			anim.SetBool("Jump", false);
+		if((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)) 
+		   && jumpTime != 0){
+			jumpTime--;
+			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, rigidbody2D.velocity.y+heldVelocity);
+			rigidbody2D.AddForce(new Vector2(0f, heldVelocity*jumpTime));
+		}
+		else{
+			jumpTime = 0;
+			heldVelocity = 6.3f;
 		}
 
+		//Crouch stuff
 		if(Input.GetKey(KeyCode.DownArrow))
 			anim.SetBool ("Crouch", true);
 		else
 			anim.SetBool ("Crouch", false);
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate() {
+
+		//walk and run stuff
 		float xAxisValue = Input.GetAxis("Horizontal");
 		Vector2 vel = rigidbody2D.velocity;
 
@@ -100,25 +105,6 @@ public class MarioControllerScript : MonoBehaviour {
 			anim.SetFloat ("Speed", Mathf.Abs(vel.x));
 		}
 
-		if(jump){
-			anim.SetBool ("Jump", true);
-			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-			jump = false;
-			jumpTime = 15f;
-			if(anim.GetFloat("Speed") > 5f) heldVelocity += 1f;
-		}
-
-		if((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)) 
-		   && jumpTime != 0){
-			jumpTime--;
-			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, rigidbody2D.velocity.y+heldVelocity);
-			rigidbody2D.AddForce(new Vector2(0f, heldVelocity*jumpTime));
-		}
-		else{
-			jumpTime = 0;
-			heldVelocity = 6.3f;
-		}
-
 		if (xAxisValue > 0 && !facingRight){
 			if(anim.GetFloat("Speed") > 0) anim.SetBool("Slide", true);
 			Flip ();
@@ -136,20 +122,24 @@ public class MarioControllerScript : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
-	/*void OnCollision2(Collision2D collision){
+	void OnCollisionEnter2D(Collision2D collision){
 
-		RaycastHit2D myRayHit = Physics2D.Linecast(transform.position, collision.gameObject.transform.position);
-		
-		Vector2 myNormal = myRayHit.normal;
-		myNormal = myRayHit.transform.TransformDirection(myNormal);
-		Debug.Log(myNormal);
-		
-
-		if (myNormal.x != 0f && myNormal.y == 0) {
-			Debug.Log("Setting speed to 0");
-			Vector2 vel = gameObject.rigidbody2D.velocity;
-			vel.x = 0;
-			gameObject.rigidbody2D.velocity = vel;
+		if(collision.contacts[0].otherCollider == headCollider)
+			Debug.Log("Hit head");
+		else if(collision.contacts[0].otherCollider == footCollider){
+			if(collision.gameObject.layer == LayerMask.NameToLayer("Ground")
+			   && grounded == false){
+				grounded = true;
+				anim.SetBool("Jump", false);
+			}
 		}
-	}*/
+	}
+
+	void OnTriggerEnter2D(Collider2D collider){
+		Debug.Log("Trigger");
+		if(collider.gameObject.layer == LayerMask.NameToLayer("Enemies")){
+			Debug.Log(collider.gameObject.GetComponent<GoombaController>().squished);
+			anim.SetBool("Death", true);
+		}
+	}
 }
