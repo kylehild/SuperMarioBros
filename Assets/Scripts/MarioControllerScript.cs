@@ -3,15 +3,19 @@ using System.Collections;
 
 public class MarioControllerScript : MonoBehaviour {
 
-	public float 	speed = 10f;
+	public float	speed;
+	public float 	runSpeed = 10f;
+	public float	walkSpeed = 5f;
+	public float	pipeSpeed = 2f;
 	public float	jumpForce = 500f;
 	public float	jumpTime = 0f;
 	public float 	heldVelocity = 6.3f;
 	public float 	deathTime = 0f;
 	public float 	deathForce = 1000f;
 	public bool 	facingRight = true;
+	public bool		inPipe = false;
+	public float	numCoins = 0;
 	private bool 	dead = false;
-	
 
 	Animator			anim;
 	public Collider2D 	headCollider;
@@ -22,6 +26,7 @@ public class MarioControllerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		anim = GetComponent<Animator> ();
+		speed = walkSpeed;
 	}
 
 	void Update()
@@ -80,10 +85,10 @@ public class MarioControllerScript : MonoBehaviour {
 		Vector2 vel = rigidbody2D.velocity;
 
 		if(Input.GetKey(KeyCode.Z)){
-			speed = 10f;
+			speed = runSpeed;
 		}
 		else{
-			speed = 5f;
+			speed = walkSpeed;
 		}
 
 		if(!anim.GetBool("Slide")){
@@ -103,6 +108,18 @@ public class MarioControllerScript : MonoBehaviour {
 
 			rigidbody2D.velocity = vel;
 			anim.SetFloat ("Speed", Mathf.Abs(vel.x));
+		}
+
+		//Pipe Stuff
+		if(inPipe && anim.GetBool ("Crouch")) {
+			vel.x = 0f;
+			vel.y = pipeSpeed;
+			rigidbody2D.velocity = vel;
+		}
+		else if(inPipe){
+			vel.x = pipeSpeed;
+			vel.y = 0f;
+			rigidbody2D.velocity = vel;
 		}
 
 		if (xAxisValue > 0 && !facingRight){
