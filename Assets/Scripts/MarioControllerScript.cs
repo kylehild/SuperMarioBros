@@ -136,10 +136,11 @@ public class MarioControllerScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
-		Debug.Log("Trigger");
+		//Debug.Log("Trigger");
 		if(collider.gameObject.layer == LayerMask.NameToLayer("Enemies")){
 			Debug.Log(collider.gameObject.GetComponent<GoombaController>().squished);
-			anim.SetBool("Death", true);
+			if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider)
+				anim.SetBool("Death", true);
 		}
 	}
 }
