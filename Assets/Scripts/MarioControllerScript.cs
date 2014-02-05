@@ -14,6 +14,7 @@ public class MarioControllerScript : MonoBehaviour {
 	public float 	deathForce = 1000f;
 	public bool 	facingRight = true;
 	public bool		inPipe = false;
+	public bool 	goingDown = false;
 	public float	numCoins = 0;
 	private bool 	dead = false;
 
@@ -111,9 +112,10 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 
 		//Pipe Stuff
-		if(inPipe && anim.GetBool ("Crouch")) {
+		if(inPipe && (anim.GetBool ("Crouch") || goingDown)) {
+			goingDown = true;
 			vel.x = 0f;
-			vel.y = pipeSpeed;
+			vel.y = -pipeSpeed;
 			rigidbody2D.velocity = vel;
 		}
 		else if(inPipe){
