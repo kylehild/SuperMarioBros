@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GoombaController : MonoBehaviour {
 
-	public float 		speed = -3f;
+	public float 		speed = -2.5f;
 	public float 		flipping = 0f;
 	public float 		squishTimer = 12f;
 	public bool 		facingRight = true;
@@ -26,8 +26,7 @@ public class GoombaController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if(rightBoundary.transform.position.x >= transform.position.x-0.5f
-		   && rightBoundary.transform.position.x <= transform.position.x+0.5f
+		if(!squished && rightBoundary.transform.position.x >= transform.position.x
 		   && rigidbody2D.velocity.x == 0){
 
 			Vector3 vel = rigidbody2D.velocity;

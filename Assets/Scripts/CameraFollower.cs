@@ -4,10 +4,10 @@ using System.Collections;
 
 public class CameraFollower : MonoBehaviour {
 
-	public Transform 	poi;
-	public float		u;
-	public Vector3		offset = new Vector3(0f, 4.8f, -5);
-	public Vector3		start = new Vector3(3.8f, 4.8f, -5);
+	public Transform 		poi;
+	public float			u;
+	public Vector3			offset = new Vector3(0f, 4.8f, -5);
+	public static Vector3	start = new Vector3(3.8f, 4.8f, -5);
 
 	// Use this for initialization
 	void Start() {
@@ -23,5 +23,9 @@ public class CameraFollower : MonoBehaviour {
 			pos.y = currPos.y;
 			transform.position = pos;
 		}
+	}
+
+	public void setStart(Vector3 newLoc){
+		start = newLoc;
 	}
 }

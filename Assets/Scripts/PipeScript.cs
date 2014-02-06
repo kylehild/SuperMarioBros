@@ -8,6 +8,7 @@ public class PipeScript : MonoBehaviour {
 	public Collider2D	endCollider;
 	public KeyCode		key1 = KeyCode.RightArrow;
 	public KeyCode		key2 = KeyCode.D;
+	public string		levelName = "Level_1_1";
 
 	void OnCollisionEnter2D(Collision2D collision){
 
@@ -15,7 +16,7 @@ public class PipeScript : MonoBehaviour {
 			collision.gameObject.GetComponent<MarioControllerScript>().inPipe = false;
 			collision.gameObject.GetComponent<MarioControllerScript>().goingDown = false;
 
-			Application.LoadLevel("Level_1_1");
+			Application.LoadLevel(levelName);
 		}
 
 	}
