@@ -7,27 +7,32 @@ public class MarioControllerScript : MonoBehaviour {
 	public float 	runSpeed = 10f;
 	public float	walkSpeed = 5f;
 	public float	pipeSpeed = 2f;
+
 	public float	jumpForce = 500f;
 	public float	jumpTime = 0f;
 	public float 	heldVelocity = 6.3f;
+	public bool		grounded = false;
+
 	public float 	deathTime = 0f;
 	public float 	deathForce = 1000f;
+
 	public bool 	facingRight = true;
 	public bool		inPipe = false;
 	public bool 	goingDown = false;
 	public float	numCoins = 0;
 	private bool 	dead = false;
 
-	Animator			anim;
-	public Collider2D 	headCollider;
-	public Collider2D 	footCollider;
-	public Collider2D	triggerCollider;
-	public bool			grounded = false;
+	public Animator				anim;
+	public Collider2D 		headCollider;
+	public Collider2D 		footCollider;
+	public Collider2D		triggerCollider;
+	public static Vector3	startPos = new Vector3 (3f, 1.5f, 0);
 
 	// Use this for initialization
 	void Start() {
 		anim = GetComponent<Animator> ();
 		speed = walkSpeed;
+		gameObject.transform.position = startPos;
 	}
 
 	void Update()
@@ -38,20 +43,30 @@ public class MarioControllerScript : MonoBehaviour {
 			rigidbody2D.velocity = newVel;
 			dead = true;
 			deathTime = 15f;
+			return;
 			//Time.timeScale = 0;
 		}
 
-		if(deathTime > 0) deathTime--;
+		if(deathTime > 0){
+			deathTime--;
+			return;
+		}
 		else if(deathTime == 0 && dead){
 			Destroy(footCollider);
 			Destroy(triggerCollider);
 			Destroy(headCollider);
 			rigidbody2D.AddForce(new Vector2(0f, deathForce));
 			deathTime = -1f;
+			return;
 		}
-		else if(deathTime == -1f)
+		else if(deathTime == -1f){
 			if(transform.position.y < -1.5f) Application.LoadLevel(Application.loadedLevelName);
+			return;
+		}
 
+		if(anim.GetBool("Win")){
+			Debug.Log ("WINNER!!!!");
+		}
 
 		// Jump stuff
 		if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) 
@@ -157,9 +172,12 @@ public class MarioControllerScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		//Debug.Log("Trigger");
 		if(collider.gameObject.layer == LayerMask.NameToLayer("Enemies")){
-			Debug.Log(collider.gameObject.GetComponent<GoombaController>().squished);
 			if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider)
 				anim.SetBool("Death", true);
 		}
+	}
+
+	public void setMarioStart(Vector3 newPos){
+		startPos = newPos;
 	}
 }

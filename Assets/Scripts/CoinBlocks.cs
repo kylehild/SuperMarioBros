@@ -50,6 +50,7 @@ public class CoinBlocks : MonoBehaviour {
 			}
 			else if(translatedPos.y < -0.99f){//hit below
 				hit = true;
+				collision.gameObject.GetComponent<MarioControllerScript>().numCoins++;
 				anim.SetTrigger("Hit");
 			}
 			else{ //hit on the side

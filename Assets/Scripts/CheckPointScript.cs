@@ -3,14 +3,14 @@ using System.Collections;
 
 public class CheckPointScript : MonoBehaviour {
 
-	public GameObject	camera;
-	public GameObject	Mario;
+	public GameObject		Mario;
+	public BoxCollider2D	pipeCollider;
 
 	void OnTriggerEnter2D(Collider2D collider){
 		if(collider.gameObject.name == "Mario"){
-			Vector3 newLoc = new Vector3(82.8f, 4.8f, -5);
-			camera.GetComponent<CameraFollower>().setStart(newLoc);
-			//move Mario too
+			pipeCollider.center = new Vector2(0f, 1f);
+			Vector3 newMario = new Vector3(83f, 1.5f, 0);
+			Mario.GetComponent<MarioControllerScript>().setMarioStart(newMario);
 		}
 	}
 }

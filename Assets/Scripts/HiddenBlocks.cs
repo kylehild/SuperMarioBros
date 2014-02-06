@@ -51,6 +51,7 @@ public class HiddenBlocks : MonoBehaviour {
 			else if(translatedPos.y < -0.99f){//hit below
 				hit = true;
 				anim.SetTrigger("Hit");
+				//Debug.Log("Hit below");
 			}
 			else{ //hit on the side
 				//Debug.Log("Hit on side");
