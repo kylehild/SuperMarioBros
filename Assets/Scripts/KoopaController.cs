@@ -57,7 +57,7 @@ public class KoopaController : MonoBehaviour {
 				squished = true;
 			}
 			else if(left.transform != null && flipping == 0){
-				Debug.Log("hit on left");
+				//Debug.Log("hit on left");
 				if(left.collider.gameObject.name != "Mario"
 				   && left.collider.gameObject.layer != LayerMask.NameToLayer("Camera")) 
 					Flip ();
@@ -65,7 +65,7 @@ public class KoopaController : MonoBehaviour {
 					Destroy(left.collider.gameObject);
 			}
 			else if(right.transform != null && flipping == 0){
-				Debug.Log("hit on right");
+				//Debug.Log("hit on right");
 				if(right.collider.gameObject.name != "Mario"
 				   && right.collider.gameObject.layer != LayerMask.NameToLayer("Camera")) 
 					Flip ();
