@@ -9,6 +9,7 @@ public class CoinBlocks : MonoBehaviour {
 	private Vector3		originalPos;
 	private Animator	anim;
 	private GameObject	boundary;
+	public AudioClip	bumpBlock;
 
 	// Use this for initialization
 	void Start () {
@@ -49,8 +50,10 @@ public class CoinBlocks : MonoBehaviour {
 				//Debug.Log("Hit on top");
 			}
 			else if(translatedPos.y < -0.99f){//hit below
+				if(!hit)
+					collision.gameObject.GetComponent<MarioControllerScript>().addCoin();
+				audio.PlayOneShot(bumpBlock);
 				hit = true;
-				collision.gameObject.GetComponent<MarioControllerScript>().numCoins++;
 				anim.SetTrigger("Hit");
 			}
 			else{ //hit on the side

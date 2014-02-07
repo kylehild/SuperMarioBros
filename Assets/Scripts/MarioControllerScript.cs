@@ -16,17 +16,21 @@ public class MarioControllerScript : MonoBehaviour {
 	public float 	deathTime = 0f;
 	public float 	deathForce = 1000f;
 
-	public bool 	facingRight = true;
-	public bool		inPipe = false;
-	public bool 	goingDown = false;
-	public float	numCoins = 0;
-	private bool 	dead = false;
+	public bool 			facingRight = true;
+	public bool				inPipe = false;
+	public bool 			goingDown = false;
+	public static bool		goingUp = false;
+	public static float		numCoins = 0;
+	public float			coins;
+	private bool 			dead = false;
 
-	public Animator				anim;
+	public Animator			anim;
 	public Collider2D 		headCollider;
 	public Collider2D 		footCollider;
 	public Collider2D		triggerCollider;
 	public static Vector3	startPos = new Vector3 (3f, 1.5f, 0);
+	public AudioClip		coinSound;
+	public AudioClip		deathSound;
 
 	// Use this for initialization
 	void Start() {
@@ -37,8 +41,11 @@ public class MarioControllerScript : MonoBehaviour {
 
 	void Update()
 	{ 
+		coins = numCoins;
 		//death stuff
 		if(anim.GetBool("Death") && !dead){
+			GameObject.Find(" Main Camera").GetComponent<AudioSource>().Stop ();
+			audio.PlayOneShot(deathSound);
 			Vector2 newVel = new Vector2(0f, 0f);
 			rigidbody2D.velocity = newVel;
 			dead = true;
@@ -60,16 +67,16 @@ public class MarioControllerScript : MonoBehaviour {
 			return;
 		}
 		else if(deathTime == -1f){
-			if(transform.position.y < -1.5f) Application.LoadLevel(Application.loadedLevelName);
+			if(transform.position.y < -200f) Application.LoadLevel(Application.loadedLevelName);
 			return;
 		}
 
 		if(anim.GetBool("Win")){
-			Debug.Log ("WINNER!!!!");
+			return;
 		}
 
 		// Jump stuff
-		if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) 
+		if((Input.GetKeyDown(KeyCode.Period) || Input.GetKeyDown(KeyCode.X))
 		   && grounded){
 
 			anim.SetBool ("Jump", true);
@@ -79,7 +86,7 @@ public class MarioControllerScript : MonoBehaviour {
 			grounded = false;
 		}
 
-		if((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)) 
+		if((Input.GetKey(KeyCode.Period) || Input.GetKey(KeyCode.X))
 		   && jumpTime != 0){
 			jumpTime--;
 			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, rigidbody2D.velocity.y+heldVelocity);
@@ -91,7 +98,7 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 
 		//Crouch stuff
-		if(Input.GetKey(KeyCode.DownArrow))
+		if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
 			anim.SetBool ("Crouch", true);
 		else
 			anim.SetBool ("Crouch", false);
@@ -100,7 +107,7 @@ public class MarioControllerScript : MonoBehaviour {
 		float xAxisValue = Input.GetAxis("Horizontal");
 		Vector2 vel = rigidbody2D.velocity;
 
-		if(Input.GetKey(KeyCode.Z)){
+		if(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Comma)){
 			speed = runSpeed;
 		}
 		else{
@@ -136,6 +143,13 @@ public class MarioControllerScript : MonoBehaviour {
 		else if(inPipe){
 			vel.x = pipeSpeed;
 			vel.y = 0f;
+			rigidbody2D.velocity = vel;
+		}
+
+		if(goingUp){
+			Debug.Log ("Going Up");
+			vel.x = 0f;
+			vel.y = pipeSpeed*2;
 			rigidbody2D.velocity = vel;
 		}
 
@@ -179,5 +193,18 @@ public class MarioControllerScript : MonoBehaviour {
 
 	public void setMarioStart(Vector3 newPos){
 		startPos = newPos;
+	}
+
+	public void setUp(bool set){
+		goingUp = set;
+	}
+
+	public void addCoin(){
+		audio.PlayOneShot(coinSound);
+		numCoins++;
+	}
+
+	public float getCoins(){
+		return coins;
 	}
 }

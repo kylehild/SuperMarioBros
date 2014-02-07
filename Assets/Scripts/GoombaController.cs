@@ -16,6 +16,7 @@ public class GoombaController : MonoBehaviour {
 	public Collider2D	bodyCollider;
 	public Collider2D	footCollider;
 	public Rigidbody2D	rigidBody;
+	public AudioClip	stomp;
 
 	// Use this for initialization
 	void Start () {
@@ -60,6 +61,7 @@ public class GoombaController : MonoBehaviour {
 		if(collision.contacts[0].otherCollider == headCollider
 		   && collision.gameObject.name == "Mario"){
 			squished = true;
+			audio.PlayOneShot(stomp);
 			gameObject.layer = LayerMask.NameToLayer("Default");
 			DestroyObject(headCollider);
 			DestroyObject(bodyCollider);

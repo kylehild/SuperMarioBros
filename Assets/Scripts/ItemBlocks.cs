@@ -9,6 +9,8 @@ public class ItemBlocks : MonoBehaviour {
 	private Vector3		originalPos;
 	private Animator	anim;
 	private GameObject	boundary;
+	public AudioClip	spawnItem;
+	public AudioClip	bumpBlock;
 	
 	// Use this for initialization
 	void Start () {
@@ -49,6 +51,9 @@ public class ItemBlocks : MonoBehaviour {
 				//Debug.Log("Hit on top");
 			}
 			else if(translatedPos.y < -0.99f){//hit below
+				if(!hit)
+					audio.PlayOneShot(spawnItem);
+				audio.PlayOneShot(bumpBlock);
 				hit = true;
 				anim.SetTrigger("Hit");
 			}

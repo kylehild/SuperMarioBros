@@ -8,6 +8,8 @@ public class BreakableBlock : MonoBehaviour {
 	private Vector3		originalPos;
 	private Animator	anim;
 	private GameObject	boundary;
+	public AudioClip	bumpBlock;
+	public AudioClip	breakBlock;
 
 	// Use this for initialization
 	void Start () {
@@ -52,6 +54,7 @@ public class BreakableBlock : MonoBehaviour {
 				//Debug.Log("Hit on top");
 			}
 			else if(translatedPos.y < -0.99f){//hit below
+				audio.PlayOneShot(bumpBlock);
 				hit = true;
 				//anim.SetTrigger("Hit");
 			}
