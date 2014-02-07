@@ -15,8 +15,7 @@ public class FallDeath : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collision){
 		if(collision.gameObject.name == "Mario"){
-			//Destroy(collision.gameObject);
-			Application.LoadLevel(Application.loadedLevelName);
+			collision.gameObject.GetComponent<MarioControllerScript>().anim.SetBool("Death", true);
 		}
 		else Destroy(collision.gameObject);
 	}

@@ -7,6 +7,9 @@ public class MarioControllerScript : MonoBehaviour {
 	public float 	runSpeed = 10f;
 	public float	walkSpeed = 5f;
 	public float	pipeSpeed = 2f;
+	public float	growTimer = 0.1f;
+	public float	fireTimer = 1f;
+
 
 	public float	jumpForce = 500f;
 	public float	jumpTime = 0f;
@@ -19,22 +22,34 @@ public class MarioControllerScript : MonoBehaviour {
 	public bool 			facingRight = true;
 	public bool				inPipe = false;
 	public bool 			goingDown = false;
-	public static bool		goingUp = false;
-	public static float		numCoins = 0;
 	public float			coins;
 	private bool 			dead = false;
+	private bool			stateChange = false;
+	private bool			firstChange = false;
 
 	public Animator			anim;
-	public Collider2D 		headCollider;
-	public Collider2D 		footCollider;
-	public Collider2D		triggerCollider;
+	public BoxCollider2D 		headCollider;
+	public BoxCollider2D 		footCollider;
+	public BoxCollider2D		triggerCollider;
 	public static Vector3	startPos = new Vector3 (3f, 1.5f, 0);
+
+	public static bool		goingUp = false;
+	public static float		numCoins = 0;
+	public static float		score = 0;
+	public static float		state = 0;
+	public static float		lives = 3;
+	
 	public AudioClip		coinSound;
 	public AudioClip		deathSound;
+
+	public RuntimeAnimatorController	smallController;
+	public RuntimeAnimatorController	largeController;
+	public RuntimeAnimatorController	fireController;
 
 	// Use this for initialization
 	void Start() {
 		anim = GetComponent<Animator> ();
+		UpdateAnimator ();
 		speed = walkSpeed;
 		gameObject.transform.position = startPos;
 	}
@@ -51,7 +66,6 @@ public class MarioControllerScript : MonoBehaviour {
 			dead = true;
 			deathTime = 15f;
 			return;
-			//Time.timeScale = 0;
 		}
 
 		if(deathTime > 0){
@@ -74,6 +88,29 @@ public class MarioControllerScript : MonoBehaviour {
 		if(anim.GetBool("Win")){
 			return;
 		}
+
+		//state change
+		if(stateChange){
+			if(state == 1){
+				if(firstChange){
+					anim.SetBool("Grow", true);
+					firstChange = false;
+					rigidbody2D.velocity = new Vector2(0,0);
+					Invoke("UpdateAnimator", growTimer);
+				}
+				return;
+			}
+			else if(state == 2){
+				if(firstChange){
+					anim.SetBool("Fire", true);
+					firstChange = false;
+					rigidbody2D.velocity = new Vector2(0,0);
+					Invoke("UpdateAnimator", fireTimer);
+				}
+				return;
+			}
+		}
+
 
 		// Jump stuff
 		if((Input.GetKeyDown(KeyCode.Period) || Input.GetKeyDown(KeyCode.X))
@@ -189,6 +226,69 @@ public class MarioControllerScript : MonoBehaviour {
 			if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider)
 				anim.SetBool("Death", true);
 		}
+	}
+
+	public void UpdateAnimator(){
+		if(state == 0){
+			anim.runtimeAnimatorController = smallController;
+			footCollider.center = new Vector2(0f, 0.05f);
+			footCollider.size = new Vector2(0.7f, 0.1f);
+			headCollider.center = new Vector2(0f, 0.95f);
+			headCollider.size = new Vector2(0.1f, 0.1f);
+			triggerCollider.center = new Vector2(0f, 0.55f);
+			triggerCollider.size = new Vector2(0.75f, 0.9f);
+		}
+		else if(state == 1){
+			anim.runtimeAnimatorController = largeController;
+			footCollider.center = new Vector2(0f, 0.05f);
+			footCollider.size = new Vector2(0.9f, 0.1f);
+			headCollider.center = new Vector2(0f, 1.95f);
+			headCollider.size = new Vector2(0.1f, 0.1f);
+			triggerCollider.center = new Vector2(0f, 1.05f);
+			triggerCollider.size = new Vector2(1f, 1.9f);
+		}
+		else{
+			anim.runtimeAnimatorController = fireController;
+			footCollider.center = new Vector2(0f, 0.05f);
+			footCollider.size = new Vector2(0.9f, 0.1f);
+			headCollider.center = new Vector2(0f, 1.95f);
+			headCollider.size = new Vector2(0.1f, 0.1f);
+			triggerCollider.center = new Vector2(0f, 1.05f);
+			triggerCollider.size = new Vector2(1f, 1.9f);
+		}
+		
+		stateChange = false;
+	}
+
+	public void changeState(int newState){
+		if((state == 0 && newState == 1) ||
+		   (state == 1 && newState == 2) ||
+		   (state == 1 && newState == 0) ||
+		   (state == 2 && newState == 0))
+		{
+			state = newState;
+			stateChange = true;
+			firstChange = true;
+			score += 1000;
+		}
+		else if(state == 0 && newState == 2)
+		{
+			state = 1;
+			stateChange = true;
+			score += 1000;
+		}
+		else if(state == 2 && newState == 2)
+		{
+			score += 1000;
+		}
+	}
+	
+	public float getState(){
+		return state;
+	}
+	
+	public void addLife(){
+		lives++;
 	}
 
 	public void setMarioStart(Vector3 newPos){

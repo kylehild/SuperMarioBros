@@ -6,9 +6,11 @@ public class HiddenBlocks : MonoBehaviour {
 	public bool			hit = false;
 	public bool			finishedHit = false;
 	public float		blockAnimation = 2f;
+	public GameObject	mushroom;
 	private Vector3		originalPos;
 	private Animator	anim;
 	private GameObject	boundary;
+	private bool		itemSpawned = false;
 	public AudioClip	spawnItem;
 	public AudioClip	bumpBlock;
 	
@@ -33,6 +35,13 @@ public class HiddenBlocks : MonoBehaviour {
 				if(pos == originalPos) finishedHit = true;
 			}
 			transform.position = pos;
+		}
+
+		if(finishedHit){
+			if(!itemSpawned){
+				Instantiate(mushroom, transform.position, Quaternion.identity);
+				itemSpawned = true;
+			}
 		}
 		
 		if(boundary.transform.position.x-1.0f > transform.position.x+0.5f)

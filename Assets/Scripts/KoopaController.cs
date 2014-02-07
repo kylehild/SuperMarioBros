@@ -62,7 +62,7 @@ public class KoopaController : MonoBehaviour {
 				   && left.collider.gameObject.layer != LayerMask.NameToLayer("Camera")) 
 					Flip ();
 				else if(left.collider.gameObject.name == "Mario") 
-					DestroyObject(left.collider.gameObject);
+					Destroy(left.collider.gameObject);
 			}
 			else if(right.transform != null && flipping == 0){
 				Debug.Log("hit on right");
@@ -70,7 +70,7 @@ public class KoopaController : MonoBehaviour {
 				   && right.collider.gameObject.layer != LayerMask.NameToLayer("Camera")) 
 					Flip ();
 				else if(right.collider.gameObject.name == "Mario")
-					DestroyObject(right.collider.gameObject);
+					Destroy(right.collider.gameObject);
 			}
 			if((down1.transform != null && down1.collider.gameObject.name == "Mario")
 			   || (down2.transform != null && down2.collider.gameObject.name == "Mario")){

@@ -63,10 +63,10 @@ public class GoombaController : MonoBehaviour {
 			squished = true;
 			audio.PlayOneShot(stomp);
 			gameObject.layer = LayerMask.NameToLayer("Default");
-			DestroyObject(headCollider);
-			DestroyObject(bodyCollider);
-			DestroyObject(rigidBody);
-			DestroyObject(footCollider);
+			Destroy(headCollider);
+			Destroy(bodyCollider);
+			Destroy(rigidBody);
+			Destroy(footCollider);
 			anim.SetTrigger("Squished");
 		}
 		else if(collision.contacts[0].otherCollider == bodyCollider){

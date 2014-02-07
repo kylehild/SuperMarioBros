@@ -33,8 +33,8 @@ public class InPipeScript : MonoBehaviour {
 			
 			collider.gameObject.GetComponent<MarioControllerScript>().inPipe = true;
 
-			DestroyObject(boxCollider);
-			DestroyObject(frontCollider);
+			Destroy(boxCollider);
+			Destroy(frontCollider);
 		}
 	}
 	
