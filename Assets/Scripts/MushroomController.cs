@@ -4,11 +4,13 @@ using System.Collections;
 public class MushroomController : MonoBehaviour {
 
 	public Collider2D	marioHeadCollider = null;
-	public Collider2D	rightCollider;
-	public Collider2D	leftCollider;
+	public Collider2D	bodyCollider;
 	public Collider2D	baseCollider;
+	public Collider2D	rightFootCollider;
+	public Collider2D	leftFootCollider;
 	public float 		vSpeed = 1f;
 	public float 		hSpeed = 8f;
+	public float		flipping = 0f;
 	public bool			spawned = false;
 	public Vector3		originalPos;
 	public bool			grounded = false;
@@ -23,7 +25,11 @@ public class MushroomController : MonoBehaviour {
 	void Update () {
 	
 		if(spawned){
-			if(Mathf.Abs(rigidbody2D.velocity.x) < 0.1f)
+			Vector3 vel = rigidbody2D.velocity;
+			vel.x = hSpeed;
+			rigidbody2D.velocity = vel;
+
+			/*if(Mathf.Abs(rigidbody2D.velocity.x) < 0.1f)
 				rigidbody2D.AddForce(new Vector2(hSpeed, 0));
 
 			if(Physics2D.Raycast(transform.position, -Vector2.up, 0.5f))
@@ -32,27 +38,32 @@ public class MushroomController : MonoBehaviour {
 				grounded = true;
 			
 			if(!grounded)
-				rigidbody2D.AddForce(new Vector2(-100f, -50f));
+				rigidbody2D.AddForce(new Vector2(-100f, -50f));*/
 		}
 		else{
 			if(transform.position.y > originalPos.y+0.5f){
 				spawned = true;
-				rightCollider.enabled = true;
-				leftCollider.enabled = true;
+				rightFootCollider.enabled = true;
+				leftFootCollider.enabled = true;
 				baseCollider.enabled = true;
+				bodyCollider.enabled = true;
 				rigidbody2D.gravityScale = 5;
 			}
 			else{
 				rigidbody2D.velocity = new Vector2(0, vSpeed);
 			}
 		}
+
+		
+		if(flipping != 0) flipping--;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
-
-		if(collision.contacts[0].otherCollider == rightCollider || 
-		   collision.contacts[0].otherCollider == leftCollider){
-			hSpeed *= -1;
+		if(collision.contacts[0].otherCollider == bodyCollider && flipping == 0f){
+			if(collision.gameObject.layer != LayerMask.NameToLayer("Camera")){
+				flipping = 2f;
+				hSpeed *= -1;
+			}
 		}
 	}
 

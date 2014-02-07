@@ -9,14 +9,16 @@ public class GoombaController : MonoBehaviour {
 	public bool 		facingRight = true;
 	public bool 		squished = false;
 	public bool			started = false;
-	public bool 		killedMario = false;
 	private	GameObject	rightBoundary;
-	private Animator	anim;
+	public Animator		anim;
 	public Collider2D	headCollider;
 	public Collider2D	bodyCollider;
 	public Collider2D	footCollider;
+	public Collider2D	rightFootCollider;
+	public Collider2D	leftFootCollider;
 	public Rigidbody2D	rigidBody;
 	public AudioClip	stomp;
+	public AudioClip	bumped;
 
 	// Use this for initialization
 	void Start () {
@@ -67,15 +69,39 @@ public class GoombaController : MonoBehaviour {
 			Destroy(bodyCollider);
 			Destroy(rigidBody);
 			Destroy(footCollider);
-			anim.SetTrigger("Squished");
+			Destroy(rightFootCollider);
+			Destroy(leftFootCollider);
+			anim.SetBool("Squished", true);
 		}
 		else if(collision.contacts[0].otherCollider == bodyCollider){
-			if(collision.gameObject.name != "Mario" && flipping == 0f
+			if(collision.gameObject.tag == "Block"){
+				KillGoomba ();
+			}
+			else if(collision.gameObject.name != "Mario" && flipping == 0f
 			   && collision.gameObject.layer != LayerMask.NameToLayer("Camera")) 
 				Flip ();
 		}
 	}
 
+	void KillGoomba(){
+		audio.PlayOneShot(bumped);
+		rigidbody2D.AddForce (new Vector2 (0f, 1000f));
+
+		Vector3 theScale = transform.localScale;
+		theScale.y *= -1;
+		transform.localScale = theScale;
+
+		Destroy(headCollider);
+		Destroy(bodyCollider);
+		Destroy(footCollider);
+		Destroy(rightFootCollider);
+		Destroy(leftFootCollider);
+
+		gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Front";
+
+		Invoke ("DestroyGoomba", 3);
+	}
+	
 	public void DestroyGoomba(){
 		Destroy(gameObject);
 	}

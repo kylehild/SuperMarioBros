@@ -28,9 +28,11 @@ public class MarioControllerScript : MonoBehaviour {
 	private bool			firstChange = false;
 
 	public Animator			anim;
-	public BoxCollider2D 		headCollider;
-	public BoxCollider2D 		footCollider;
-	public BoxCollider2D		triggerCollider;
+	public BoxCollider2D 	headCollider;
+	public BoxCollider2D 	footCollider;
+	public BoxCollider2D	triggerCollider;
+	public CircleCollider2D rightFootCollider;
+	public CircleCollider2D	leftFootCollider;
 	public static Vector3	startPos = new Vector3 (3f, 1.5f, 0);
 
 	public static bool		goingUp = false;
@@ -41,6 +43,9 @@ public class MarioControllerScript : MonoBehaviour {
 	
 	public AudioClip		coinSound;
 	public AudioClip		deathSound;
+	public AudioClip		smallJumpSound;
+	public AudioClip		bigJumpSound;
+	public AudioClip		growSound;
 
 	public RuntimeAnimatorController	smallController;
 	public RuntimeAnimatorController	largeController;
@@ -74,6 +79,8 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 		else if(deathTime == 0 && dead){
 			Destroy(footCollider);
+			Destroy(rightFootCollider);
+			Destroy(leftFootCollider);
 			Destroy(triggerCollider);
 			Destroy(headCollider);
 			rigidbody2D.AddForce(new Vector2(0f, deathForce));
@@ -93,6 +100,7 @@ public class MarioControllerScript : MonoBehaviour {
 		if(stateChange){
 			if(state == 1){
 				if(firstChange){
+					audio.PlayOneShot(growSound);
 					anim.SetBool("Grow", true);
 					firstChange = false;
 					rigidbody2D.velocity = new Vector2(0,0);
@@ -102,6 +110,7 @@ public class MarioControllerScript : MonoBehaviour {
 			}
 			else if(state == 2){
 				if(firstChange){
+					audio.PlayOneShot(growSound);
 					anim.SetBool("Fire", true);
 					firstChange = false;
 					rigidbody2D.velocity = new Vector2(0,0);
@@ -115,7 +124,10 @@ public class MarioControllerScript : MonoBehaviour {
 		// Jump stuff
 		if((Input.GetKeyDown(KeyCode.Period) || Input.GetKeyDown(KeyCode.X))
 		   && grounded){
-
+			if(state == 0)
+				audio.PlayOneShot(smallJumpSound);
+			else
+				audio.PlayOneShot(bigJumpSound);
 			anim.SetBool ("Jump", true);
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 			jumpTime = 15f;
@@ -211,7 +223,9 @@ public class MarioControllerScript : MonoBehaviour {
 
 		if(collision.contacts[0].otherCollider == headCollider)
 			Debug.Log("Hit head");
-		else if(collision.contacts[0].otherCollider == footCollider){
+		else if(collision.contacts[0].otherCollider == footCollider ||
+		        collision.contacts[0].otherCollider == rightFootCollider ||
+		        collision.contacts[0].otherCollider == leftFootCollider){
 			if(collision.gameObject.layer == LayerMask.NameToLayer("Ground")
 			   && grounded == false){
 				grounded = true;
@@ -223,7 +237,8 @@ public class MarioControllerScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		//Debug.Log("Trigger");
 		if(collider.gameObject.layer == LayerMask.NameToLayer("Enemies")){
-			if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider)
+			if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider && 
+			   !collider.gameObject.GetComponent<GoombaController>().anim.GetBool("Squished"))
 				anim.SetBool("Death", true);
 		}
 	}
@@ -231,8 +246,6 @@ public class MarioControllerScript : MonoBehaviour {
 	public void UpdateAnimator(){
 		if(state == 0){
 			anim.runtimeAnimatorController = smallController;
-			footCollider.center = new Vector2(0f, 0.05f);
-			footCollider.size = new Vector2(0.7f, 0.1f);
 			headCollider.center = new Vector2(0f, 0.95f);
 			headCollider.size = new Vector2(0.1f, 0.1f);
 			triggerCollider.center = new Vector2(0f, 0.55f);
@@ -240,8 +253,6 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 		else if(state == 1){
 			anim.runtimeAnimatorController = largeController;
-			footCollider.center = new Vector2(0f, 0.05f);
-			footCollider.size = new Vector2(0.9f, 0.1f);
 			headCollider.center = new Vector2(0f, 1.95f);
 			headCollider.size = new Vector2(0.1f, 0.1f);
 			triggerCollider.center = new Vector2(0f, 1.05f);
@@ -249,8 +260,6 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 		else{
 			anim.runtimeAnimatorController = fireController;
-			footCollider.center = new Vector2(0f, 0.05f);
-			footCollider.size = new Vector2(0.9f, 0.1f);
 			headCollider.center = new Vector2(0f, 1.95f);
 			headCollider.size = new Vector2(0.1f, 0.1f);
 			triggerCollider.center = new Vector2(0f, 1.05f);
