@@ -6,9 +6,12 @@ public class HiddenBlocks : MonoBehaviour {
 	public bool			hit = false;
 	public bool			finishedHit = false;
 	public float		blockAnimation = 2f;
+	public GameObject	mushroom;
 	private Vector3		originalPos;
 	private Animator	anim;
 	private GameObject	boundary;
+	private	GameObject	mario;
+	private	bool		itemSpawned = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -32,7 +35,17 @@ public class HiddenBlocks : MonoBehaviour {
 			}
 			transform.position = pos;
 		}
-		
+
+		if(finishedHit){
+			//if(mario.GetComponent<MarioControllerScript>().state == 0)
+			if(!itemSpawned){
+				Instantiate(mushroom, transform.position, Quaternion.identity);
+				itemSpawned = true;
+			}
+			//else if(mario.GetComponent<MarioControllerScript>().state == 1)
+				//Instantiate(flower, transform.position);
+		}
+
 		if(boundary.transform.position.x-1.0f > transform.position.x+0.5f)
 			Destroy(gameObject);
 	}
@@ -40,6 +53,7 @@ public class HiddenBlocks : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision){
 		
 		if(collision.gameObject.name == "Mario"){
+			mario = collision.gameObject;
 			Vector3 marioPos = collision.gameObject.transform.position;
 			marioPos.y += 0.5f;
 			Vector3 translatedPos = marioPos - transform.position;
