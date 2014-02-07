@@ -56,11 +56,10 @@ public class BreakableBlock : MonoBehaviour {
 			else if(translatedPos.y < -0.99f){//hit below
 				audio.PlayOneShot(bumpBlock);
 				hit = true;
-				//anim.SetTrigger("Hit");
 			}
 			else{ //hit on the side
 				//Debug.Log("Hit on side");
 			}
 		}
-	}
+	}	
 }
