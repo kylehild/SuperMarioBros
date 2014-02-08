@@ -5,7 +5,9 @@ public class StarBlockScript : MonoBehaviour {
 
 	public bool			hit = false;
 	public bool			finishedHit = false;
+	public bool			itemSpawned = false;
 	public float		blockAnimation = 2f;
+	public GameObject	star;
 	private Vector3		originalPos;
 	private Animator	anim;
 	private GameObject	boundary;
@@ -34,7 +36,14 @@ public class StarBlockScript : MonoBehaviour {
 			}
 			transform.position = pos;
 		}
-		
+
+		if(finishedHit){
+			if(!itemSpawned){
+				Instantiate(star, transform.position, Quaternion.identity);
+				itemSpawned = true;
+			}
+		}
+
 		if(boundary.transform.position.x-1.0f > transform.position.x+0.5f)
 			Destroy(gameObject);
 	}

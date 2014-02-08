@@ -44,7 +44,7 @@ public class ItemBlocks : MonoBehaviour {
 				Instantiate(mushroom, transform.position, Quaternion.identity);
 				itemSpawned = true;
 			}
-			else if(!itemSpawned && mario.GetComponent<MarioControllerScript>().getState() == 1){
+			else if(!itemSpawned && mario.GetComponent<MarioControllerScript>().getState() > 0){
 				Instantiate(flower, transform.position, Quaternion.identity);
 				itemSpawned = true;
 			}
