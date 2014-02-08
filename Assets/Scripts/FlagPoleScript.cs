@@ -12,14 +12,16 @@ public class FlagPoleScript : MonoBehaviour {
 	private bool		playedFlag = false;
 	private bool		playedWin = false;
 
-	void OnTriggerEnter2D(Collider2D collider){
-		GameObject.Find(" Main Camera").GetComponent<AudioSource>().Stop ();
-		if(!playedFlag){
-			audio.PlayOneShot (flagWin);
-			playedFlag = true;
+	void OnCollisionEnter2D(Collision2D collision){
+		if(collision.contacts[0].otherCollider == flagPoleCollider){
+			GameObject.Find(" Main Camera").GetComponent<AudioSource>().Stop ();
+			if(!playedFlag){
+				audio.PlayOneShot (flagWin);
+				playedFlag = true;
+			}
+			collision.gameObject.GetComponent<MarioControllerScript> ().anim.SetBool ("Win", true);
+			Invoke ("MoveMario", 1.5f);
 		}
-		collider.gameObject.GetComponent<MarioControllerScript> ().anim.SetBool ("Win", true);
-		Invoke ("MoveMario", 1.5f);
 	}
 
 	void MoveMario(){

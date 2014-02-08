@@ -26,11 +26,17 @@ public class CastleEntranceScript : MonoBehaviour {
 		if(depletedCoins){
 			if(fireworks3){
 				fireworks3 = false;
+				depletedCoins = false;
 				Shoot3Fireworks();
 			}
 			else if(fireworks6){
 				fireworks6 = false;
+				depletedCoins = false;
 				Shoot6Fireworks();
+			}
+			else{
+				depletedCoins = false;
+				Application.LoadLevel("StartScreen");
 			}
 		}
 
@@ -56,9 +62,11 @@ public class CastleEntranceScript : MonoBehaviour {
 
 	public void Shoot3Fireworks(){
 		Debug.Log("Shoot 3 fireworks");
+		Application.LoadLevel("StartScreen");
 	}
 
 	public void Shoot6Fireworks(){
 		Debug.Log("Shoot 6 fireworks");
+		Application.LoadLevel("StartScreen");
 	}
 }

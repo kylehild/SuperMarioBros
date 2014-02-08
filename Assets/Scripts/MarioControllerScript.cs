@@ -32,6 +32,7 @@ public class MarioControllerScript : MonoBehaviour {
 	public BoxCollider2D	triggerCollider;
 	public CircleCollider2D rightFootCollider;
 	public CircleCollider2D	leftFootCollider;
+	public GameObject		mainCamera;
 	public static Vector3	startPos = new Vector3 (3f, 1.5f, 0);
 
 	public static bool		goingUp = false;
@@ -48,6 +49,7 @@ public class MarioControllerScript : MonoBehaviour {
 	public AudioClip		smallJumpSound;
 	public AudioClip		bigJumpSound;
 	public AudioClip		growSound;
+	public AudioClip		hurrySound;
 
 	public RuntimeAnimatorController	smallController;
 	public RuntimeAnimatorController	largeController;
@@ -67,6 +69,7 @@ public class MarioControllerScript : MonoBehaviour {
 			win = true;
 		}
 
+		//Make timescale not increase in guis
 		if(Application.loadedLevelName == "LivesScreen" || 
 		   Application.loadedLevelName == "GameOverScreen" || win){
 			return;
@@ -81,6 +84,13 @@ public class MarioControllerScript : MonoBehaviour {
 				marioTimeScale = 23f;
 				timeLeft--;
 			}
+		}
+
+		if (timeLeft == 0 && !win)
+			anim.SetBool ("Death", true);
+		else if(timeLeft == 100 && !win){
+			audio.PlayOneShot(hurrySound);
+			Invoke("SpeedMusic", 3f);
 		}
 
 		//death stuff
@@ -372,6 +382,10 @@ public class MarioControllerScript : MonoBehaviour {
 
 	public void setLastLevel(string newLast){
 		lastLevel = newLast;
+	}
+
+	public void SpeedMusic(){
+		mainCamera.GetComponent<AudioSource> ().pitch = 1.15f;
 	}
 
 	public void initVariables(){
