@@ -8,7 +8,8 @@ public class OutPipeScript : MonoBehaviour {
 	private bool			hasPlayed = false;
 
 	void OnTriggerExit2D(Collider2D collider){
-		if(collider.gameObject.name == "Mario"){
+		if(collider.gameObject.name == "Mario" && 
+		   collider.gameObject.GetComponent<MarioControllerScript>().footCollider == collider){
 			if(!hasPlayed){
 				audio.PlayOneShot(outPipeSound);
 				hasPlayed = true;

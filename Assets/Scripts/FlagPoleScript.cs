@@ -5,6 +5,10 @@ public class FlagPoleScript : MonoBehaviour {
 
 	public AudioClip	flagWin;
 	public AudioClip	winLevel;
+	public GameObject	Mario;
+	public Collider2D	flagPoleCollider;
+	public Collider2D	baseCollider;
+	public float		moveSpeed = 3f;
 	private bool		playedFlag = false;
 	private bool		playedWin = false;
 
@@ -23,6 +27,11 @@ public class FlagPoleScript : MonoBehaviour {
 			audio.PlayOneShot (winLevel);
 			playedWin = true;
 		}
-		Debug.Log ("Move Mario to end");
+
+		Destroy (flagPoleCollider);
+		Destroy (baseCollider);
+
+		Mario.GetComponent<MarioControllerScript> ().anim.SetFloat ("Speed", moveSpeed);
+		Mario.rigidbody2D.velocity = new Vector2 (moveSpeed, 0f);
 	}
 }

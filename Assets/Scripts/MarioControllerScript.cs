@@ -4,25 +4,24 @@ using System.Collections;
 public class MarioControllerScript : MonoBehaviour {
 
 	public float	speed;
-	public float 	runSpeed = 10f;
-	public float	walkSpeed = 5f;
-	public float	pipeSpeed = 2f;
-	public float	growTimer = 0.1f;
-	public float	fireTimer = 1f;
-
-
+	private float 	runSpeed = 10f;
+	private float	walkSpeed = 5f;
+	private float	pipeSpeed = 2f;
+	private float	growTimer = 0.1f;
+	private float	fireTimer = 1f;
+	
 	public float	jumpForce = 500f;
-	public float	jumpTime = 0f;
-	public float 	heldVelocity = 6.3f;
+	private float	jumpTime = 0f;
+	private float 	heldVelocity = 6.3f;
 	public bool		grounded = false;
 
-	public float 	deathTime = 0f;
+	private float 	deathTime = 0f;
 	public float 	deathForce = 1000f;
 
-	public bool 			facingRight = true;
+	private bool 			facingRight = true;
 	public bool				inPipe = false;
 	public bool 			goingDown = false;
-	public float			coins;
+	private bool 			win = false;
 	private bool 			dead = false;
 	private bool			stateChange = false;
 	private bool			firstChange = false;
@@ -36,10 +35,13 @@ public class MarioControllerScript : MonoBehaviour {
 	public static Vector3	startPos = new Vector3 (3f, 1.5f, 0);
 
 	public static bool		goingUp = false;
-	public static float		numCoins = 0;
-	public static float		score = 0;
-	public static float		state = 0;
-	public static float		lives = 3;
+	public static float		numCoins = 0f;
+	public static float		score = 0f;
+	public static float		state = 0f;
+	public static float		lives = 3f;
+	public static float		timeLeft = 400f;
+	public static string	lastLevel;
+	private float 			marioTimeScale = 23f;
 	
 	public AudioClip		coinSound;
 	public AudioClip		deathSound;
@@ -60,10 +62,30 @@ public class MarioControllerScript : MonoBehaviour {
 	}
 
 	void Update()
-	{ 
-		coins = numCoins;
+	{ 	
+		if(anim.GetBool("Win")){
+			win = true;
+		}
+
+		if(Application.loadedLevelName == "LivesScreen" || 
+		   Application.loadedLevelName == "GameOverScreen" || win){
+			return;
+		}
+		else if(Application.loadedLevelName == "StartScreen"){
+			timeLeft = 400f;
+		}
+		else{
+			if (marioTimeScale > 0)
+				marioTimeScale--;
+			else{
+				marioTimeScale = 23f;
+				timeLeft--;
+			}
+		}
+
 		//death stuff
 		if(anim.GetBool("Death") && !dead){
+			marioTimeScale = 500f;
 			GameObject.Find(" Main Camera").GetComponent<AudioSource>().Stop ();
 			audio.PlayOneShot(deathSound);
 			Vector2 newVel = new Vector2(0f, 0f);
@@ -78,6 +100,8 @@ public class MarioControllerScript : MonoBehaviour {
 			return;
 		}
 		else if(deathTime == 0 && dead){
+			lastLevel = Application.loadedLevelName;
+			lives--;
 			Destroy(footCollider);
 			Destroy(rightFootCollider);
 			Destroy(leftFootCollider);
@@ -88,11 +112,13 @@ public class MarioControllerScript : MonoBehaviour {
 			return;
 		}
 		else if(deathTime == -1f){
-			if(transform.position.y < -200f) Application.LoadLevel(Application.loadedLevelName);
-			return;
-		}
-
-		if(anim.GetBool("Win")){
+			if(transform.position.y < -200f) {
+				timeLeft = 400f;
+				if(lives > 0)
+					Application.LoadLevel("LivesScreen");
+				else
+					Application.LoadLevel("GameOverScreen");
+			}
 			return;
 		}
 
@@ -184,19 +210,21 @@ public class MarioControllerScript : MonoBehaviour {
 
 		//Pipe Stuff
 		if(inPipe && (anim.GetBool ("Crouch") || goingDown)) {
+			marioTimeScale = 500f;
 			goingDown = true;
 			vel.x = 0f;
 			vel.y = -pipeSpeed;
 			rigidbody2D.velocity = vel;
 		}
 		else if(inPipe){
+			marioTimeScale = 500f;
 			vel.x = pipeSpeed;
 			vel.y = 0f;
 			rigidbody2D.velocity = vel;
 		}
 
 		if(goingUp){
-			Debug.Log ("Going Up");
+			marioTimeScale = 50f;
 			vel.x = 0f;
 			vel.y = pipeSpeed*2;
 			rigidbody2D.velocity = vel;
@@ -212,7 +240,7 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 	}
 
-	void Flip(){
+	public void Flip(){
 		facingRight = !facingRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
@@ -298,6 +326,11 @@ public class MarioControllerScript : MonoBehaviour {
 	
 	public void addLife(){
 		lives++;
+		score += 1000;
+	}
+
+	public float getLives(){
+		return lives;
 	}
 
 	public void setMarioStart(Vector3 newPos){
@@ -311,9 +344,42 @@ public class MarioControllerScript : MonoBehaviour {
 	public void addCoin(){
 		audio.PlayOneShot(coinSound);
 		numCoins++;
+		score += 200;
 	}
 
 	public float getCoins(){
-		return coins;
+		return numCoins;
+	}
+
+	public float getScore(){
+		return score;
+	}
+
+	public float getTime(){
+		return timeLeft;
+	}
+
+	public void subtractTime(){
+		audio.time = .75f;
+		audio.Play ();
+		timeLeft--;
+		score += 50f;
+	}
+
+	public string getLastLevel(){
+		return lastLevel;
+	}
+
+	public void setLastLevel(string newLast){
+		lastLevel = newLast;
+	}
+
+	public void initVariables(){
+		timeLeft = 400f;
+		numCoins = 0f;
+		score = 0f;
+		startPos = new Vector3 (3f, 1.5f, 0);
+		lives = 3f;
+		state = 0f;
 	}
 }
