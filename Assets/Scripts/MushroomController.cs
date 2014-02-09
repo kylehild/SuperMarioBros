@@ -70,8 +70,12 @@ public class MushroomController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 
 		if(collider.gameObject.name == "Mario" && spawned){
-			if(gameObject.name == "Mushroom(Clone)")
-				collider.gameObject.GetComponent<MarioControllerScript>().changeState(1);
+			if(gameObject.name == "Mushroom(Clone)"){
+				if(collider.gameObject.GetComponent<MarioControllerScript>().getState() == 0)
+					collider.gameObject.GetComponent<MarioControllerScript>().changeState(1);
+				else if(collider.gameObject.GetComponent<MarioControllerScript>().getState() == 3)
+					collider.gameObject.GetComponent<MarioControllerScript>().changeState(4);
+			}
 			else
 				collider.gameObject.GetComponent<MarioControllerScript>().addLife();
 

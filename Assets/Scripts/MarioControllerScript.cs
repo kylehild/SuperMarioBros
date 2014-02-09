@@ -7,9 +7,10 @@ public class MarioControllerScript : MonoBehaviour {
 	private float 	runSpeed = 10f;
 	private float	walkSpeed = 5f;
 	private float	pipeSpeed = 2f;
-	private float	growTimer = 0.1f;
-	private float	fireTimer = 1f;
-	
+	private float	growTimer = 0.5f;
+	private float	fireTimer = 0.5f;
+	private float	starTimer = 15f;
+
 	public float	jumpForce = 500f;
 	private float	jumpTime = 0f;
 	private float 	heldVelocity = 6.3f;
@@ -25,6 +26,8 @@ public class MarioControllerScript : MonoBehaviour {
 	private bool 			dead = false;
 	private bool			stateChange = false;
 	private bool			firstChange = false;
+	private bool			shrinking = false;
+	private bool			invincible = false;
 
 	public Animator			anim;
 	public BoxCollider2D 	headCollider;
@@ -43,13 +46,14 @@ public class MarioControllerScript : MonoBehaviour {
 	public static float		timeLeft = 400f;
 	public static string	lastLevel;
 	private float 			marioTimeScale = 23f;
-	
+
 	public AudioClip		coinSound;
 	public AudioClip		deathSound;
 	public AudioClip		smallJumpSound;
 	public AudioClip		bigJumpSound;
 	public AudioClip		growSound;
 	public AudioClip		hurrySound;
+	public AudioClip		starSound;
 
 	public RuntimeAnimatorController	smallController;
 	public RuntimeAnimatorController	largeController;
@@ -134,7 +138,22 @@ public class MarioControllerScript : MonoBehaviour {
 
 		//state change
 		if(stateChange){
-			if(state == 1){
+			if(state == 0){
+				if(firstChange){
+					audio.PlayOneShot(growSound);
+					firstChange = false;
+					rigidbody2D.velocity = new Vector2(0,0);
+					Invoke("UpdateAnimator", growTimer);
+					shrinking = true;
+					gameObject.layer = LayerMask.NameToLayer("Item");
+					Invoke("DoneShrinking", 3f);
+					anim.SetBool("Shrink", true);
+				}
+				bool blink = gameObject.GetComponent<SpriteRenderer>().enabled;
+				gameObject.GetComponent<SpriteRenderer>().enabled = !blink;
+				return;
+			}
+			else if(state == 1){
 				if(firstChange){
 					audio.PlayOneShot(growSound);
 					anim.SetBool("Grow", true);
@@ -154,8 +173,26 @@ public class MarioControllerScript : MonoBehaviour {
 				}
 				return;
 			}
+			else {
+				audio.PlayOneShot(starSound);
+				//anim.SetBool("Fire", true);
+				stateChange = false;
+				//rigidbody2D.velocity = new Vector2(0,0);
+				//UpdateAnimator();
+				invincible = true;
+				Invoke("DoneInvincible", starTimer);
+			}
 		}
 
+		if(shrinking){
+			bool blink = gameObject.GetComponent<SpriteRenderer>().enabled;
+			gameObject.GetComponent<SpriteRenderer>().enabled = !blink;
+		}
+
+		if(invincible){
+			bool blink = gameObject.GetComponent<SpriteRenderer>().enabled;
+			gameObject.GetComponent<SpriteRenderer>().enabled = !blink;
+		}
 
 		// Jump stuff
 		if((Input.GetKeyDown(KeyCode.Period) || Input.GetKeyDown(KeyCode.X))
@@ -273,12 +310,29 @@ public class MarioControllerScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
-		//Debug.Log("Trigger");
 		if(collider.gameObject.layer == LayerMask.NameToLayer("Enemies")){
 			if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider && 
-			   !collider.gameObject.GetComponent<GoombaController>().anim.GetBool("Squished"))
-				anim.SetBool("Death", true);
+			   !collider.gameObject.GetComponent<GoombaController>().anim.GetBool("Squished") &&
+			   !invincible){
+
+				if(state == 0) anim.SetBool("Death", true);
+				else changeState(0);
+			}
 		}
+	}
+
+	void DoneInvincible(){
+		invincible = false;
+		gameObject.GetComponent<SpriteRenderer>().enabled = true;
+		state -= 3f;
+		UpdateAnimator();
+	}
+
+	void DoneShrinking(){
+		shrinking = false;
+		gameObject.layer = LayerMask.NameToLayer("Player");
+		gameObject.GetComponent<SpriteRenderer>().enabled = true;
+		stateChange = false;
 	}
 
 	public void UpdateAnimator(){
@@ -307,26 +361,33 @@ public class MarioControllerScript : MonoBehaviour {
 		stateChange = false;
 	}
 
-	public void changeState(int newState){
-		if((state == 0 && newState == 1) ||
-		   (state == 1 && newState == 2) ||
-		   (state == 1 && newState == 0) ||
-		   (state == 2 && newState == 0))
+	public void changeState(float newState){
+		if((state == 0f && newState == 1f) ||
+		   (state == 1f && newState == 2f) ||
+		   (state == 1f && newState == 0f) ||
+		   (state == 2f && newState == 0f))
 		{
 			state = newState;
 			stateChange = true;
 			firstChange = true;
 			score += 1000;
 		}
-		else if(state == 0 && newState == 2)
+		else if(state == 0f && newState == 2f)
 		{
-			state = 1;
+			state = 1f;
 			stateChange = true;
 			score += 1000;
 		}
-		else if(state == 2 && newState == 2)
+		else if(state == 2f && newState == 2f)
 		{
 			score += 1000;
+		}
+		else if(newState == state+3f ||
+		        state == 3 && newState == 4 ||
+		        state == 4 && newState == 5)
+		{
+			state = newState;
+			stateChange = true;
 		}
 	}
 	

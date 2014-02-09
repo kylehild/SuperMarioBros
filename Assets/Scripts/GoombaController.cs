@@ -80,6 +80,9 @@ public class GoombaController : MonoBehaviour {
 			else if(collision.gameObject.name != "Mario" && flipping == 0f
 			   && collision.gameObject.layer != LayerMask.NameToLayer("Camera")) 
 				Flip ();
+			else if(collision.gameObject.name == "Mario" &&
+			        collision.gameObject.GetComponent<MarioControllerScript>().getState() > 2)
+				KillGoomba();
 		}
 	}
 

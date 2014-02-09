@@ -61,7 +61,12 @@ public class StarController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider){
 		if(collider.gameObject.name == "Mario" && spawned){
-			collider.gameObject.GetComponent<MarioControllerScript>().changeState(3);
+			if(collider.gameObject.GetComponent<MarioControllerScript>().getState() == 0)
+				collider.gameObject.GetComponent<MarioControllerScript>().changeState(3);
+			else if(collider.gameObject.GetComponent<MarioControllerScript>().getState() == 1)
+				collider.gameObject.GetComponent<MarioControllerScript>().changeState(4);
+			else
+				collider.gameObject.GetComponent<MarioControllerScript>().changeState(5);
 			Destroy(this.gameObject);
 		}
 	}

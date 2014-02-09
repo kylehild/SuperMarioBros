@@ -40,7 +40,8 @@ public class ItemBlocks : MonoBehaviour {
 		}
 
 		if(finishedHit){
-			if(!itemSpawned && mario.GetComponent<MarioControllerScript>().getState() == 0){
+			if((mario.GetComponent<MarioControllerScript>().getState() == 0 || 
+			    mario.GetComponent<MarioControllerScript>().getState() == 3) && !itemSpawned){
 				Instantiate(mushroom, transform.position, Quaternion.identity);
 				itemSpawned = true;
 			}

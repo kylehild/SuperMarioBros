@@ -5,9 +5,11 @@ public class BreakableBlock : MonoBehaviour {
 
 	public bool			hit = false;
 	public bool			upwardMotion = true;
+	public bool			destroyed = false;
 	private Vector3		originalPos;
 	private Animator	anim;
 	private GameObject	boundary;
+	public GameObject	brokenPiece;
 	public AudioClip	bumpBlock;
 	public AudioClip	breakBlock;
 
@@ -28,6 +30,11 @@ public class BreakableBlock : MonoBehaviour {
 				if(pos.y > (originalPos.y+0.4f)) upwardMotion = false;
 			}
 			else{
+				if(destroyed){
+					audio.PlayOneShot(breakBlock);
+					DestroyBlock();
+					return;
+				}
 				pos.y -= 0.1f;
 				if(pos == originalPos){
 					hit = false;
@@ -54,7 +61,10 @@ public class BreakableBlock : MonoBehaviour {
 				//Debug.Log("Hit on top");
 			}
 			else if(translatedPos.y < -0.99f){//hit below
-				audio.PlayOneShot(bumpBlock);
+				if(collision.gameObject.GetComponent<MarioControllerScript>().getState() == 0)
+					audio.PlayOneShot(bumpBlock);
+				else
+					destroyed = true;
 				hit = true;
 			}
 			else{ //hit on the side
@@ -62,4 +72,33 @@ public class BreakableBlock : MonoBehaviour {
 			}
 		}
 	}	
+
+	void DestroyBlock(){
+		GameObject topRight = brokenPiece;
+		topRight.GetComponent<BrokenBlock>().SetLoc(0);
+		Instantiate(topRight, transform.position, Quaternion.identity);
+
+		GameObject topLeft = brokenPiece;
+		topLeft.GetComponent<BrokenBlock>().SetLoc(1);
+		Vector3 theScale = topLeft.transform.localScale;
+		theScale.x *= -1;
+		topLeft.transform.localScale = theScale;
+		Instantiate(topLeft, transform.position, Quaternion.identity);
+
+		GameObject bottomLeft = brokenPiece;
+		bottomLeft.GetComponent<BrokenBlock>().SetLoc(3);
+		theScale = bottomLeft.transform.localScale;
+		theScale.x *= -1;
+		bottomLeft.transform.localScale = theScale;
+		Instantiate(bottomLeft, transform.position, Quaternion.identity);
+
+		GameObject bottomRight = brokenPiece;
+		bottomRight.GetComponent<BrokenBlock>().SetLoc(2);
+		theScale = bottomRight.transform.localScale;
+		theScale.x *= -1;
+		bottomRight.transform.localScale = theScale;
+		Instantiate(bottomRight, transform.position, Quaternion.identity);
+
+		Destroy(this.gameObject);
+	}
 }
