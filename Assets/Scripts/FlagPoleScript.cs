@@ -40,6 +40,8 @@ public class FlagPoleScript : MonoBehaviour {
 				audio.PlayOneShot (flagWin);
 				playedFlag = true;
 			}
+			
+			collision.gameObject.GetComponent<MarioControllerScript> ().anim.SetFloat ("Speed", 0f);
 			collision.gameObject.GetComponent<MarioControllerScript> ().anim.SetBool ("Win", true);
 			Invoke ("MoveMario", 1.5f);
 		}
@@ -47,13 +49,14 @@ public class FlagPoleScript : MonoBehaviour {
 
 	void MoveMario(){
 		if(!playedWin){
+			Mario.GetComponent<MarioControllerScript> ().anim.SetBool ("Win", false);
+			Mario.GetComponent<MarioControllerScript> ().anim.SetFloat ("Speed", moveSpeed);
 			audio.PlayOneShot (winLevel);
 			playedWin = true;
 		}
 
 		Destroy (baseCollider);
 
-		Mario.GetComponent<MarioControllerScript> ().anim.SetFloat ("Speed", moveSpeed);
 		Mario.rigidbody2D.velocity = new Vector2 (moveSpeed, 0f);
 	}
 }

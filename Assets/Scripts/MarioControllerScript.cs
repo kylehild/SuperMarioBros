@@ -71,6 +71,8 @@ public class MarioControllerScript : MonoBehaviour {
 	void Update()
 	{ 	
 		if(anim.GetBool("Win")){
+			if(!win)
+				rigidbody2D.velocity = new Vector2(0f, 0.5f);
 			win = true;
 		}
 
