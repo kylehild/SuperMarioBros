@@ -365,6 +365,10 @@ public class MarioControllerScript : MonoBehaviour {
 		return score;
 	}
 
+	public void addScore(float amount){
+		score += amount;
+	}
+
 	public float getTime(){
 		return timeLeft;
 	}

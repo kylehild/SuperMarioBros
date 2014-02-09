@@ -5,7 +5,7 @@ public class GoombaController : MonoBehaviour {
 
 	public float 		speed = -2.5f;
 	public float 		flipping = 0f;
-	public float 		squishTimer = 12f;
+	public float 		squishTimer = 10f;
 	public bool 		facingRight = true;
 	public bool 		squished = false;
 	public bool			started = false;
@@ -71,6 +71,7 @@ public class GoombaController : MonoBehaviour {
 			Destroy(footCollider);
 			Destroy(rightFootCollider);
 			Destroy(leftFootCollider);
+			collision.gameObject.GetComponent<MarioControllerScript>().addScore(100);
 			anim.SetBool("Squished", true);
 		}
 		else if(collision.contacts[0].otherCollider == bodyCollider){
