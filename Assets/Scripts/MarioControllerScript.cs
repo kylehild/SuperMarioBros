@@ -9,7 +9,7 @@ public class MarioControllerScript : MonoBehaviour {
 	private float	pipeSpeed = 2f;
 	private float	growTimer = 0.5f;
 	private float	fireTimer = 0.5f;
-	private float	starTimer = 15f;
+	private float	starTimer = 11.25f;
 
 	public float	jumpForce = 500f;
 	private float	jumpTime = 0f;
@@ -47,6 +47,7 @@ public class MarioControllerScript : MonoBehaviour {
 	public static string	lastLevel;
 	private float 			marioTimeScale = 23f;
 
+	public AudioClip		gameMusic;
 	public AudioClip		coinSound;
 	public AudioClip		deathSound;
 	public AudioClip		smallJumpSound;
@@ -100,7 +101,7 @@ public class MarioControllerScript : MonoBehaviour {
 		//death stuff
 		if(anim.GetBool("Death") && !dead){
 			marioTimeScale = 500f;
-			GameObject.Find(" Main Camera").GetComponent<AudioSource>().Stop ();
+			mainCamera.audio.Stop ();
 			audio.PlayOneShot(deathSound);
 			Vector2 newVel = new Vector2(0f, 0f);
 			rigidbody2D.velocity = newVel;
@@ -174,6 +175,7 @@ public class MarioControllerScript : MonoBehaviour {
 				return;
 			}
 			else {
+				mainCamera.audio.Stop ();
 				audio.PlayOneShot(starSound);
 				//anim.SetBool("Fire", true);
 				stateChange = false;
@@ -238,7 +240,6 @@ public class MarioControllerScript : MonoBehaviour {
 
 		if(!anim.GetBool("Slide")){
 			vel.x = xAxisValue * speed;
-			rigidbody2D.velocity = vel;
 			anim.SetFloat ("Speed", Mathf.Abs(vel.x));
 		}
 		else if(rigidbody2D.velocity.x == 0)
@@ -250,8 +251,6 @@ public class MarioControllerScript : MonoBehaviour {
 				vel.x = rigidbody2D.velocity.x - 0.05f;
 			else 
 				vel.x = 0;
-
-			rigidbody2D.velocity = vel;
 			anim.SetFloat ("Speed", Mathf.Abs(vel.x));
 		}
 
@@ -261,22 +260,21 @@ public class MarioControllerScript : MonoBehaviour {
 			goingDown = true;
 			vel.x = 0f;
 			vel.y = -pipeSpeed;
-			rigidbody2D.velocity = vel;
 		}
 		else if(inPipe){
 			marioTimeScale = 500f;
 			vel.x = pipeSpeed;
 			vel.y = 0f;
-			rigidbody2D.velocity = vel;
 		}
 
 		if(goingUp){
 			marioTimeScale = 50f;
 			vel.x = 0f;
 			vel.y = pipeSpeed*2;
-			rigidbody2D.velocity = vel;
 		}
 
+		rigidbody2D.velocity = vel;
+		
 		if (xAxisValue > 0 && !facingRight){
 			if(anim.GetFloat("Speed") > 0) anim.SetBool("Slide", true);
 			Flip ();
@@ -326,6 +324,7 @@ public class MarioControllerScript : MonoBehaviour {
 		gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		state -= 3f;
 		UpdateAnimator();
+		mainCamera.audio.PlayOneShot(gameMusic);
 	}
 
 	void DoneShrinking(){

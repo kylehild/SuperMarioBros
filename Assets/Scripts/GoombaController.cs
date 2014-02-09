@@ -56,7 +56,7 @@ public class GoombaController : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		speed *= -1;
-		flipping = 2f;
+		flipping = 4f;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
