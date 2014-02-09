@@ -29,9 +29,12 @@ public class FireFlower : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		
 		if(collider.gameObject.name == "Mario" && spawned){
-			if(gameObject.name == "FireFlower(Clone)")
+
+			if(collider.gameObject.GetComponent<MarioControllerScript>().getState() > 2)
+				collider.gameObject.GetComponent<MarioControllerScript>().changeState(5);
+			else
 				collider.gameObject.GetComponent<MarioControllerScript>().changeState(2);
-			
+
 			Destroy(this.gameObject);
 		}
 	}

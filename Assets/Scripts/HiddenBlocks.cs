@@ -10,6 +10,7 @@ public class HiddenBlocks : MonoBehaviour {
 	private Vector3		originalPos;
 	private Animator	anim;
 	private GameObject	boundary;
+	public Collider2D 	bottomCollider;
 	private bool		itemSpawned = false;
 	public AudioClip	spawnItem;
 	public AudioClip	bumpBlock;
@@ -70,5 +71,18 @@ public class HiddenBlocks : MonoBehaviour {
 				//Debug.Log("Hit on side");
 			}
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collider){
+		if(collider.gameObject.name == "Mario"){
+			Debug.Log("Turning off");
+			bottomCollider.enabled = false;
+			Invoke("ColliderOn", 0.5f);
+		}
+	}
+
+	void ColliderOn(){
+		Debug.Log("Turning on");
+		bottomCollider.enabled = true;
 	}
 }
