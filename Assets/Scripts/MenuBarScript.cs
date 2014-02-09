@@ -26,7 +26,7 @@ public class MenuBarScript : MonoBehaviour {
 		GUI.Label (new Rect (rW*150, rH*10, 200, 100), Mario.GetComponent<MarioControllerScript>().getCoins().ToString("00"));
 		if (Mario.GetComponent<MarioControllerScript> ().getLastLevel() == "Level_R_K" ||
 		    Mario.GetComponent<MarioControllerScript> ().getLastLevel() == "Level_R_K_Pipe")
-						levelName = "R-K";
+						levelName = "K-R";
 		GUI.Label (new Rect (rW*210, rH*10, 200, 100), levelName);
 		GUI.Label (new Rect (rW*290, rH*10, 200, 100), Mario.GetComponent<MarioControllerScript>().getTime().ToString("000"));
 	}

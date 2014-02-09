@@ -50,12 +50,14 @@ public class HiddenBlocks : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision){
-		
+
+		Debug.Log (collision.gameObject.name);
+
 		if(collision.gameObject.name == "Mario"){
 			Vector3 marioPos = collision.gameObject.transform.position;
 			marioPos.y += 0.5f;
 			Vector3 translatedPos = marioPos - transform.position;
-			//Debug.Log(translatedPos);
+			Debug.Log(translatedPos);
 			
 			if(translatedPos.y > 0.99f){ //hit on top
 				//Debug.Log("Hit on top");

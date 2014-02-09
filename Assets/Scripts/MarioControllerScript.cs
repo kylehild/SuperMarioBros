@@ -131,6 +131,7 @@ public class MarioControllerScript : MonoBehaviour {
 		else if(deathTime == -1f){
 			if(transform.position.y < -200f) {
 				timeLeft = 400f;
+				state = 0;
 				if(lives > 0)
 					Application.LoadLevel("LivesScreen");
 				else
