@@ -58,7 +58,8 @@ public class BreakableBlock : MonoBehaviour {
 			if(translatedPos.y > 0.99f){ //hit on top
 				//Debug.Log("Hit on top");
 			}
-			else if(translatedPos.y < -0.99f){//hit below
+			else if(translatedPos.y < -0.99f && 
+			        collision.gameObject.GetComponent<MarioControllerScript>().anim.GetBool("Jump")){//hit below
 				if(collision.gameObject.GetComponent<MarioControllerScript>().getState() == 0 ||
 				   collision.gameObject.GetComponent<MarioControllerScript>().getState() == 3)
 					audio.PlayOneShot(bumpBlock);

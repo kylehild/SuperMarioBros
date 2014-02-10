@@ -11,6 +11,7 @@ public class HiddenBlocks : MonoBehaviour {
 	private Animator	anim;
 	private GameObject	boundary;
 	public Collider2D 	bottomCollider;
+	public Collider2D 	trigger;
 	private bool		itemSpawned = false;
 	public AudioClip	spawnItem;
 	public AudioClip	bumpBlock;
@@ -50,7 +51,9 @@ public class HiddenBlocks : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision){
-		
+
+		Debug.Log(collision.gameObject.name);
+
 		if(collision.gameObject.name == "Mario"){
 			Vector3 marioPos = collision.gameObject.transform.position;
 			marioPos.y += 0.5f;
@@ -60,12 +63,14 @@ public class HiddenBlocks : MonoBehaviour {
 			if(translatedPos.y > 0.99f){ //hit on top
 				//Debug.Log("Hit on top");
 			}
-			else if(translatedPos.y < -0.99f){//hit below
+			else if(translatedPos.y < -0.99f && 
+			        collision.gameObject.GetComponent<MarioControllerScript>().anim.GetBool("Jump")){//hit below
 				if(!hit)
 					audio.PlayOneShot(spawnItem);
 				audio.PlayOneShot(bumpBlock);
 				hit = true;
 				anim.SetTrigger("Hit");
+				trigger.isTrigger = false;
 			}
 			else{ //hit on the side
 				//Debug.Log("Hit on side");

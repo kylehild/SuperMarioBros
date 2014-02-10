@@ -43,6 +43,7 @@ public class FlagPoleScript : MonoBehaviour {
 			
 			collision.gameObject.GetComponent<MarioControllerScript> ().anim.SetFloat ("Speed", 0f);
 			collision.gameObject.GetComponent<MarioControllerScript> ().anim.SetBool ("Win", true);
+			collision.gameObject.GetComponent<MarioControllerScript> ().setMarioStart(new Vector3(3f, 1.5f, 0f));
 			Invoke ("MoveMario", 1.5f);
 		}
 	}

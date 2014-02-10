@@ -59,7 +59,8 @@ public class StarBlockScript : MonoBehaviour {
 			if(translatedPos.y > 0.99f){ //hit on top
 				//Debug.Log("Hit on top");
 			}
-			else if(translatedPos.y < -0.99f){//hit below
+			else if(translatedPos.y < -0.99f && 
+			        collision.gameObject.GetComponent<MarioControllerScript>().anim.GetBool("Jump")){//hit below
 				if(!hit)
 					audio.PlayOneShot(spawnItem);
 				audio.PlayOneShot(bumpBlock);
