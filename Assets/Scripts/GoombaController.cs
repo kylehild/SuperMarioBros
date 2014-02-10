@@ -101,6 +101,8 @@ public class GoombaController : MonoBehaviour {
 
 		gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Front";
 
+		GameObject.Find ("Mario").GetComponent<MarioControllerScript> ().addScore (100);
+
 		Invoke ("DestroyGoomba", 3);
 	}
 	

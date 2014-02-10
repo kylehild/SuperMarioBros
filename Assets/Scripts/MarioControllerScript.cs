@@ -53,6 +53,7 @@ public class MarioControllerScript : MonoBehaviour {
 	public AudioClip		smallJumpSound;
 	public AudioClip		bigJumpSound;
 	public AudioClip		growSound;
+	public AudioClip		shrinkSound;
 	public AudioClip		hurrySound;
 	public AudioClip		starSound;
 
@@ -144,7 +145,7 @@ public class MarioControllerScript : MonoBehaviour {
 		if(stateChange){
 			if(state == 0){
 				if(firstChange){
-					audio.PlayOneShot(growSound);
+					audio.PlayOneShot(shrinkSound);
 					firstChange = false;
 					rigidbody2D.velocity = new Vector2(0,0);
 					Invoke("UpdateAnimator", growTimer);
@@ -313,10 +314,13 @@ public class MarioControllerScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		if(collider.gameObject.layer == LayerMask.NameToLayer("Enemies")){
 			if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider && 
-			   !collider.gameObject.GetComponent<GoombaController>().anim.GetBool("Squished") &&
+			   !collider.gameObject.GetComponent<GoombaController>().squished &&
 			   !invincible){
-
-				if(state == 0) anim.SetBool("Death", true);
+				
+				if(transform.position.y > collider.gameObject.transform.position.y + 0.9f){ //hit on top
+					//Debug.Log("Hit on top");
+				}
+				else if(state == 0) anim.SetBool("Death", true);
 				else changeState(0);
 			}
 		}
