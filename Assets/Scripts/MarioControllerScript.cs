@@ -52,8 +52,10 @@ public class MarioControllerScript : MonoBehaviour {
 	public AudioClip		smallJumpSound;
 	public AudioClip		bigJumpSound;
 	public AudioClip		growSound;
+	public AudioClip		shrinkSound;
 	public AudioClip		hurrySound;
 	public AudioClip		starSound;
+	public AudioClip		gameMusic;
 
 	public RuntimeAnimatorController	smallController;
 	public RuntimeAnimatorController	largeController;
@@ -70,6 +72,8 @@ public class MarioControllerScript : MonoBehaviour {
 	void Update()
 	{ 	
 		if(anim.GetBool("Win")){
+			if(!win)
+				rigidbody2D.velocity = new Vector2(0f, 0.5f);
 			win = true;
 		}
 
@@ -100,7 +104,7 @@ public class MarioControllerScript : MonoBehaviour {
 		//death stuff
 		if(anim.GetBool("Death") && !dead){
 			marioTimeScale = 500f;
-			GameObject.Find(" Main Camera").GetComponent<AudioSource>().Stop ();
+			mainCamera.audio.Stop ();
 			audio.PlayOneShot(deathSound);
 			Vector2 newVel = new Vector2(0f, 0f);
 			rigidbody2D.velocity = newVel;
@@ -128,6 +132,7 @@ public class MarioControllerScript : MonoBehaviour {
 		else if(deathTime == -1f){
 			if(transform.position.y < -200f) {
 				timeLeft = 400f;
+				state = 0;
 				if(lives > 0)
 					Application.LoadLevel("LivesScreen");
 				else
@@ -140,7 +145,7 @@ public class MarioControllerScript : MonoBehaviour {
 		if(stateChange){
 			if(state == 0){
 				if(firstChange){
-					audio.PlayOneShot(growSound);
+					audio.PlayOneShot(shrinkSound);
 					firstChange = false;
 					rigidbody2D.velocity = new Vector2(0,0);
 					Invoke("UpdateAnimator", growTimer);
@@ -174,6 +179,7 @@ public class MarioControllerScript : MonoBehaviour {
 				return;
 			}
 			else {
+				mainCamera.audio.Stop();
 				audio.PlayOneShot(starSound);
 				//anim.SetBool("Fire", true);
 				stateChange = false;
@@ -238,7 +244,6 @@ public class MarioControllerScript : MonoBehaviour {
 
 		if(!anim.GetBool("Slide")){
 			vel.x = xAxisValue * speed;
-			rigidbody2D.velocity = vel;
 			anim.SetFloat ("Speed", Mathf.Abs(vel.x));
 		}
 		else if(rigidbody2D.velocity.x == 0)
@@ -251,7 +256,6 @@ public class MarioControllerScript : MonoBehaviour {
 			else 
 				vel.x = 0;
 
-			rigidbody2D.velocity = vel;
 			anim.SetFloat ("Speed", Mathf.Abs(vel.x));
 		}
 
@@ -261,21 +265,20 @@ public class MarioControllerScript : MonoBehaviour {
 			goingDown = true;
 			vel.x = 0f;
 			vel.y = -pipeSpeed;
-			rigidbody2D.velocity = vel;
 		}
 		else if(inPipe){
 			marioTimeScale = 500f;
 			vel.x = pipeSpeed;
 			vel.y = 0f;
-			rigidbody2D.velocity = vel;
 		}
 
 		if(goingUp){
 			marioTimeScale = 50f;
 			vel.x = 0f;
 			vel.y = pipeSpeed*2;
-			rigidbody2D.velocity = vel;
 		}
+		
+		rigidbody2D.velocity = vel;
 
 		if (xAxisValue > 0 && !facingRight){
 			if(anim.GetFloat("Speed") > 0) anim.SetBool("Slide", true);
@@ -312,10 +315,11 @@ public class MarioControllerScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		if(collider.gameObject.layer == LayerMask.NameToLayer("Enemies")){
 			if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider && 
-			   !collider.gameObject.GetComponent<GoombaController>().anim.GetBool("Squished") &&
+			   !collider.gameObject.GetComponent<GoombaController>().squished &&
 			   !invincible){
 
-				if(state == 0) anim.SetBool("Death", true);
+				if(transform.position.y > collider.gameObject.transform.position.y+0.9f){}
+				else if(state == 0) anim.SetBool("Death", true);
 				else changeState(0);
 			}
 		}
@@ -326,6 +330,7 @@ public class MarioControllerScript : MonoBehaviour {
 		gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		state -= 3f;
 		UpdateAnimator();
+		mainCamera.audio.PlayOneShot(gameMusic);
 	}
 
 	void DoneShrinking(){
@@ -424,6 +429,10 @@ public class MarioControllerScript : MonoBehaviour {
 
 	public float getScore(){
 		return score;
+	}
+
+	public void addScore(float amount){
+		score += amount;
 	}
 
 	public float getTime(){

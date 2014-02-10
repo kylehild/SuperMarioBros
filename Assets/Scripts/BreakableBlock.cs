@@ -7,7 +7,6 @@ public class BreakableBlock : MonoBehaviour {
 	public bool			upwardMotion = true;
 	public bool			destroyed = false;
 	private Vector3		originalPos;
-	private Animator	anim;
 	private GameObject	boundary;
 	public GameObject	brokenPiece;
 	public AudioClip	bumpBlock;
@@ -15,7 +14,6 @@ public class BreakableBlock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator> ();
 		boundary = GameObject.Find("LeftBoundary");
 		originalPos = transform.position;
 	}
@@ -61,7 +59,8 @@ public class BreakableBlock : MonoBehaviour {
 				//Debug.Log("Hit on top");
 			}
 			else if(translatedPos.y < -0.99f){//hit below
-				if(collision.gameObject.GetComponent<MarioControllerScript>().getState() == 0)
+				if(collision.gameObject.GetComponent<MarioControllerScript>().getState() == 0 ||
+				   collision.gameObject.GetComponent<MarioControllerScript>().getState() == 3)
 					audio.PlayOneShot(bumpBlock);
 				else
 					destroyed = true;

@@ -9,7 +9,7 @@ public class GoombaController : MonoBehaviour {
 	public bool 		facingRight = true;
 	public bool 		squished = false;
 	public bool			started = false;
-	private	GameObject	rightBoundary;
+	public bool			canMove = false;
 	public Animator		anim;
 	public Collider2D	headCollider;
 	public Collider2D	bodyCollider;
@@ -23,14 +23,12 @@ public class GoombaController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
-		rightBoundary = GameObject.Find ("RightBoundary");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		if(!squished && rightBoundary.transform.position.x >= transform.position.x
-		   && rigidbody2D.velocity.x == 0){
+		if(!squished && canMove && rigidbody2D.velocity.x == 0){
 
 			Vector3 vel = rigidbody2D.velocity;
 			vel.x = speed;
@@ -101,6 +99,8 @@ public class GoombaController : MonoBehaviour {
 		Destroy(leftFootCollider);
 
 		gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Front";
+
+		GameObject.Find("Mario").GetComponent<MarioControllerScript>().addScore(100);
 
 		Invoke ("DestroyGoomba", 3);
 	}
