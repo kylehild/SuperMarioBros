@@ -67,7 +67,7 @@ public class ItemBlocks : MonoBehaviour {
 			if(translatedPos.y > 0.99f){ //hit on top
 				//Debug.Log("Hit on top");
 			}
-			else if(translatedPos.y < -0.99f && 
+			else if(translatedPos.y < -0.95f && 
 			        collision.gameObject.GetComponent<MarioControllerScript>().anim.GetBool("Jump")){//hit below
 				if(!hit)
 					audio.PlayOneShot(spawnItem);

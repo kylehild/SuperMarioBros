@@ -34,6 +34,7 @@ public class FlagPoleScript : MonoBehaviour {
 			Destroy (collider800);
 			Destroy (collider2000);
 			Destroy (collider5000);
+			gameObject.GetComponent<Animator>().SetBool("Hit", true);
 			
 			GameObject.Find(" Main Camera").GetComponent<AudioSource>().Stop ();
 			if(!playedFlag){
@@ -57,7 +58,7 @@ public class FlagPoleScript : MonoBehaviour {
 		}
 		
 		Destroy (baseCollider);
-		
+
 		Mario.rigidbody2D.velocity = new Vector2 (moveSpeed, 0f);
 	}
 }

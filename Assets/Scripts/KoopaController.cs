@@ -3,28 +3,77 @@ using System.Collections;
 
 public class KoopaController : MonoBehaviour {
 	
-	public float 		speed = -3f;
+	public float 		speed = -2.5f;
 	public float 		flipping = 0f;
+	public float 		squishTime = 0f;
+	public float 		spawnTime = 0f;
 	public bool 		facingRight = true;
 	public bool 		squished = false;
 	public bool			started = false;
-	private	GameObject	rightBoundary;
-	private Animator	anim;
-	private Vector2		pos;
-	private RaycastHit2D left, right, up1, up2, down1, down2;
+	public bool			waiting = false;
+	public bool			spawning = false;
+	public bool			hit = false;
+	public bool 		canHit = false;
+	public Animator		anim;
+	public GameObject	rightBoundary;
+
+	public Collider2D	headCollider;
+	public Collider2D	bodyCollider;
+	public Collider2D	footCollider;
+	public Collider2D	rightFootCollider;
+	public Collider2D	leftFootCollider;
+	public Rigidbody2D	rigidBody;
+
+	public AudioClip	stomp;
+	public AudioClip	bumped;
 	
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator> ();
 		rightBoundary = GameObject.Find ("RightBoundary");
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if(rightBoundary.transform.position.x >= transform.position.x-0.5f
-		   && rightBoundary.transform.position.x <= transform.position.x+0.5f
-		   && rigidbody2D.velocity.x == 0){
+
+		if(hit){
+			squished = false;
+			anim.SetBool("Squished", false);
+			waiting = false;
+			spawning = false;
+			anim.SetBool("Respawn", false);
+			Vector3 vel = rigidbody2D.velocity;
+			vel.x = speed*4f;
+			rigidbody2D.velocity = vel;
+			anim.SetFloat("Speed", 0f);
+		}
+
+		if(waiting && squishTime > 0){
+			squishTime--;
+		}
+		else if(waiting){
+			spawning = true;
+			spawnTime = 100f;
+			anim.SetBool("Respawn", true);
+			waiting = false;
+		}
+
+		if(spawning && spawnTime > 0)
+			spawnTime--;
+		else if(spawning){
+			anim.SetFloat("Speed", Mathf.Abs(speed));
+			anim.SetBool("Respawn", false);
+			canHit = false;
+			spawning = false;
+		}
+
+		if(squished && anim.GetFloat ("Speed") > 0){
+			anim.SetBool ("Squished", false);
+			squished = false;
+		}
+
+		if(!hit && !squished && rightBoundary.transform.position.x >= transform.position.x && 
+		   rigidbody2D.velocity.x == 0){
 			
 			Vector3 vel = rigidbody2D.velocity;
 			vel.x = speed;
@@ -32,50 +81,17 @@ public class KoopaController : MonoBehaviour {
 			started = true;
 		}
 		
-		if(started){
+		if(!hit && started && !squished){
 			Vector3 vel = rigidbody2D.velocity;
 			vel.x = speed;
-			if(squished) vel.x = 0;
 			rigidbody2D.velocity = vel;
 		}
-		
-		if(flipping != 0) flipping--;
 
-		if(!squished){
-			pos = transform.position;
-			left =  Physics2D.Raycast(new Vector2(pos.x-0.5f, pos.y+0.5f), -Vector2.right, 0.1f);
-			right =  Physics2D.Raycast(new Vector2(pos.x+0.5f, pos.y+0.5f), Vector2.right, 0.1f);
-			up1 =  Physics2D.Raycast(new Vector2(pos.x+.375f, pos.y+1f), Vector2.up, 0.1f);
-			up2 =  Physics2D.Raycast(new Vector2(pos.x-.375f, pos.y+1f), Vector2.up, 0.1f);
-			down1 =  Physics2D.Raycast(new Vector2(pos.x+.375f, pos.y), -Vector2.up, 0.1f);
-			down2 =  Physics2D.Raycast(new Vector2(pos.x-.375f, pos.y), -Vector2.up, 0.1f);
-			
-			if((up1.transform != null && up1.collider.gameObject.name == "Mario")
-			   || (up2.transform != null && up2.collider.gameObject.name == "Mario")){
-				//Debug.DrawRay(new Vector2(pos.x, pos.y+1f), Vector2.up, Color.blue, 60);
-				anim.SetTrigger("Squished");
-				squished = true;
-			}
-			else if(left.transform != null && flipping == 0){
-				//Debug.Log("hit on left");
-				if(left.collider.gameObject.name != "Mario"
-				   && left.collider.gameObject.layer != LayerMask.NameToLayer("Camera")) 
-					Flip ();
-				else if(left.collider.gameObject.name == "Mario") 
-					Destroy(left.collider.gameObject);
-			}
-			else if(right.transform != null && flipping == 0){
-				//Debug.Log("hit on right");
-				if(right.collider.gameObject.name != "Mario"
-				   && right.collider.gameObject.layer != LayerMask.NameToLayer("Camera")) 
-					Flip ();
-				else if(right.collider.gameObject.name == "Mario")
-					Destroy(right.collider.gameObject);
-			}
-			if((down1.transform != null && down1.collider.gameObject.name == "Mario")
-			   || (down2.transform != null && down2.collider.gameObject.name == "Mario")){
-				//Debug.Log("hit on bottom");
-			}
+		if(flipping != 0) flipping--;
+		
+		if(squished && !waiting){
+			squishTime = 300f;
+			waiting = true;
 		}
 	}
 	
@@ -85,6 +101,75 @@ public class KoopaController : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		speed *= -1;
-		flipping = 5f;
+		flipping = 2f;
+	}
+	
+	void OnCollisionEnter2D(Collision2D collision){
+		if(collision.contacts[0].otherCollider == headCollider &&
+		   collision.gameObject.name == "Mario" &&
+		   collision.contacts[0].collider == collision.gameObject.GetComponent<MarioControllerScript>().footCollider){
+			if(!squished){
+				squished = true;
+				audio.PlayOneShot(stomp);
+				anim.SetBool("Squished", true);
+				rigidbody2D.velocity = new Vector2(0f, 0f);
+				canHit = true;
+			}
+			else if(canHit){
+				audio.PlayOneShot(bumped);
+				if(transform.position.x-collision.gameObject.transform.position.x > 0f)
+					speed *= -1;
+				
+				if(hit){
+					anim.SetBool("Hit", false);
+					hit = false;
+					rigidbody2D.velocity = new Vector2(0f, 0f);
+				}
+				else{
+					anim.SetBool("Hit", true);
+					hit = true;
+					rigidbody2D.velocity = new Vector2(speed*4f, 0f);
+				}
+			}
+		}
+		else if(collision.contacts[0].otherCollider == bodyCollider){
+			if(collision.gameObject.tag == "Block"){
+				KillKoopa ();
+			}
+			else if(collision.gameObject.name != "Mario" && collision.gameObject.name != "Goomba"
+			        && flipping == 0f && collision.gameObject.layer != LayerMask.NameToLayer("Camera")) 
+				Flip ();
+			else if(collision.gameObject.name == "Mario" &&
+			        collision.gameObject.GetComponent<MarioControllerScript>().Invincible())
+				KillKoopa();
+			else if(collision.gameObject.name == "GreenKoopa" &&
+			        collision.gameObject.GetComponent<Animator>().GetBool("Hit"))
+				KillKoopa();
+		}
+	}
+	
+	void KillKoopa(){
+		audio.PlayOneShot(bumped);
+		rigidbody2D.AddForce (new Vector2 (0f, 1000f));
+		
+		Vector3 theScale = transform.localScale;
+		theScale.y *= -1;
+		transform.localScale = theScale;
+		
+		Destroy(headCollider);
+		Destroy(bodyCollider);
+		Destroy(footCollider);
+		Destroy(rightFootCollider);
+		Destroy(leftFootCollider);
+		
+		gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Front";
+		
+		GameObject.Find("Mario").GetComponent<MarioControllerScript>().addScore(100);
+		
+		Invoke ("DestroyKoopa", 3);
+	}
+	
+	public void DestroyKoopa(){
+		Destroy(gameObject);
 	}
 }

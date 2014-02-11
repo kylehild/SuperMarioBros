@@ -13,7 +13,6 @@ public class StarController : MonoBehaviour {
 	public float		flipping = 0f;
 	public bool			spawned = false;
 	public Vector3		originalPos;
-	public bool			grounded = false;
 	private Vector2		position;
 	
 	// Use this for initialization
@@ -61,12 +60,7 @@ public class StarController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider){
 		if(collider.gameObject.name == "Mario" && spawned){
-			if(collider.gameObject.GetComponent<MarioControllerScript>().getState() == 0)
-				collider.gameObject.GetComponent<MarioControllerScript>().changeState(3);
-			else if(collider.gameObject.GetComponent<MarioControllerScript>().getState() == 1)
-				collider.gameObject.GetComponent<MarioControllerScript>().changeState(4);
-			else
-				collider.gameObject.GetComponent<MarioControllerScript>().changeState(5);
+			collider.gameObject.GetComponent<MarioControllerScript>().HitStar();
 			Destroy(this.gameObject);
 		}
 	}

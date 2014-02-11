@@ -79,8 +79,12 @@ public class GoombaController : MonoBehaviour {
 			   && collision.gameObject.layer != LayerMask.NameToLayer("Camera")) 
 				Flip ();
 			else if(collision.gameObject.name == "Mario" &&
-			        collision.gameObject.GetComponent<MarioControllerScript>().getState() > 2)
+			        collision.gameObject.GetComponent<MarioControllerScript>().Invincible())
 				KillGoomba();
+			else if(collision.gameObject.name == "GreenKoopa" &&
+			        collision.gameObject.GetComponent<KoopaController>().hit)
+				KillGoomba();
+
 		}
 	}
 
