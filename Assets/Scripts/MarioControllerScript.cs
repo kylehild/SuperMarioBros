@@ -214,7 +214,7 @@ public class MarioControllerScript : MonoBehaviour {
 		//Crouch stuff
 		if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)){
 			if(state > 0){
-				headCollider.center = new Vector2(0f, 0.95f);
+				headCollider.center = new Vector2(0f, 0.925f);
 				triggerCollider.center = new Vector2(0f, 0.5f);
 				triggerCollider.size = new Vector2(0.75f, 0.8f);
 				middleCollider.center = new Vector2(0f, 0.5f);
@@ -224,7 +224,7 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 		else{
 			if(state > 0){
-				headCollider.center = new Vector2(0f, 1.95f);
+				headCollider.center = new Vector2(0f, 1.925f);
 				triggerCollider.center = new Vector2(0f, 1.0f);
 				triggerCollider.size = new Vector2(1f, 1.8f);
 				middleCollider.center = new Vector2(0f, 1f);
@@ -478,7 +478,7 @@ public class MarioControllerScript : MonoBehaviour {
 	public void UpdateAnimator(){
 		if(state == 0){
 			anim.runtimeAnimatorController = smallController;
-			headCollider.center = new Vector2(0f, 0.95f);
+			headCollider.center = new Vector2(0f, 0.925f);
 			triggerCollider.center = new Vector2(0f, 0.5f);
 			triggerCollider.size = new Vector2(0.75f, 0.8f);
 			middleCollider.center = new Vector2(0f, 0.5f);
@@ -486,7 +486,7 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 		else if(state == 1){
 			anim.runtimeAnimatorController = largeController;
-			headCollider.center = new Vector2(0f, 1.95f);
+			headCollider.center = new Vector2(0f, 1.925f);
 			triggerCollider.center = new Vector2(0f, 1.0f);
 			triggerCollider.size = new Vector2(1f, 1.8f);
 			middleCollider.center = new Vector2(0f, 1f);
@@ -494,7 +494,7 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 		else{
 			anim.runtimeAnimatorController = fireController;
-			headCollider.center = new Vector2(0f, 1.95f);
+			headCollider.center = new Vector2(0f, 1.925f);
 			triggerCollider.center = new Vector2(0f, 1.0f);
 			triggerCollider.size = new Vector2(1f, 1.8f);
 			middleCollider.center = new Vector2(0f, 1f);
