@@ -148,7 +148,7 @@ public class KoopaController : MonoBehaviour {
 		}
 	}
 	
-	void KillKoopa(){
+	public void KillKoopa(){
 		audio.PlayOneShot(bumped);
 		rigidbody2D.AddForce (new Vector2 (0f, 1000f));
 		

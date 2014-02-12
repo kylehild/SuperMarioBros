@@ -58,6 +58,7 @@ public class GoombaController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
+
 		if(collision.contacts[0].otherCollider == headCollider
 		   && collision.gameObject.name == "Mario"){
 			squished = true;
@@ -88,7 +89,7 @@ public class GoombaController : MonoBehaviour {
 		}
 	}
 
-	void KillGoomba(){
+	public void KillGoomba(){
 		audio.PlayOneShot(bumped);
 		rigidbody2D.AddForce (new Vector2 (0f, 1000f));
 

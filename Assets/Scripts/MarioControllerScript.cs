@@ -5,6 +5,7 @@ public class MarioControllerScript : MonoBehaviour {
 
 	public float	speed = 0f;
 	public float	baseSpeed = 5f;
+	public float	fireballCount = 0f;
 	public Vector2	vel;
 	private float 	maxRunSpeed = 10f;
 	private float	maxWalkSpeed = 5f;
@@ -14,6 +15,7 @@ public class MarioControllerScript : MonoBehaviour {
 	private float	growTimer = 0.5f;
 	private float	fireTimer = 0.5f;
 	private float	starTimer = 11f;
+	private float	fireballTimer = 0f;
 
 	public float	jumpForce = 500f;
 	private float	jumpTime = 0f;
@@ -253,8 +255,10 @@ public class MarioControllerScript : MonoBehaviour {
 		}
 
 		//Fire bullets
-		if(state == 2f && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Comma))){
-			//spawn bullets
+		if(fireballTimer != 0f) fireballTimer--;
+		else if(state == 2f && fireballCount < 2f &&
+		       (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Comma))){
+
 			Debug.Log("Fire");
 			Vector3 pos = transform.position;
 			pos.y += 1f;
@@ -266,9 +270,10 @@ public class MarioControllerScript : MonoBehaviour {
 				pos.x -= 0.51f;
 				fireball.GetComponent<FireBallScript>().left = true;
 			}
+			fireballCount++;
+			fireballTimer = 5f;
 			Instantiate(fireball, pos, Quaternion.identity);
 		}
-
 
 		//walk and run stuff
 		float xAxisValue = Input.GetAxis("Horizontal");
