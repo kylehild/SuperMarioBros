@@ -14,6 +14,7 @@ public class FireBallScript : MonoBehaviour {
 	public bool			start = true;
 	public bool			left;
 	public bool			exploded = false;
+	public AudioClip	explodeSound;
 
 	// Use this for initialization
 	void Start () {
@@ -34,8 +35,10 @@ public class FireBallScript : MonoBehaviour {
 		else rigidbody2D.velocity = new Vector2(0f, 0f);
 
 		if(transform.position.x > rightBoundary.transform.position.x - 2f ||
-		   transform.position.x < leftBoundary.transform.position.x){
-			DestroyFireBall();
+		   transform.position.x < leftBoundary.transform.position.x ||
+		   transform.position.y < -1f){
+			mario.GetComponent<MarioControllerScript>().SubtractFireball();
+			Invoke("DestroyFireBall", 0.1f);
 		}	
 	}
 	
@@ -48,7 +51,8 @@ public class FireBallScript : MonoBehaviour {
 			else
 				collision.gameObject.GetComponent<KoopaController>().KillKoopa();
 			exploded = true;
-			Invoke("DestroyFireBall", 0.2f);
+			mario.GetComponent<MarioControllerScript>().SubtractFireball();
+			Invoke("DestroyFireBall", 0.1f);
 		}
 
 		if(collision.contacts[0].otherCollider == footCollider){
@@ -58,13 +62,14 @@ public class FireBallScript : MonoBehaviour {
 			if(collision.gameObject.layer != LayerMask.NameToLayer("Camera")){
 				gameObject.GetComponent<Animator>().SetBool("Explode", true);
 				exploded = true;
-				Invoke("DestroyFireBall", 0.2f);
+				audio.PlayOneShot(explodeSound);
+				mario.GetComponent<MarioControllerScript>().SubtractFireball();
+				Invoke("DestroyFireBall", 0.1f);
 			}
 		}
 	}
 
 	void DestroyFireBall(){
-		mario.GetComponent<MarioControllerScript>().fireballCount--;
 		Destroy(gameObject);
 	}
 }

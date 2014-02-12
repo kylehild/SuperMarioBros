@@ -91,7 +91,8 @@ public class GoombaController : MonoBehaviour {
 
 	public void KillGoomba(){
 		audio.PlayOneShot(bumped);
-		rigidbody2D.AddForce (new Vector2 (0f, 1000f));
+		rigidbody2D.velocity = new Vector2(0f, 0f);
+		rigidbody2D.AddForce (new Vector2 (100f, 750f));
 
 		Vector3 theScale = transform.localScale;
 		theScale.y *= -1;

@@ -26,6 +26,7 @@ public class KoopaController : MonoBehaviour {
 
 	public AudioClip	stomp;
 	public AudioClip	bumped;
+	public AudioClip	bounce;
 	
 	// Use this for initialization
 	void Start () {
@@ -101,7 +102,8 @@ public class KoopaController : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		speed *= -1;
-		flipping = 2f;
+		flipping = 4f;
+		if(hit) audio.PlayOneShot(bounce);
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision){
@@ -114,6 +116,7 @@ public class KoopaController : MonoBehaviour {
 				anim.SetBool("Squished", true);
 				rigidbody2D.velocity = new Vector2(0f, 0f);
 				canHit = true;
+				collision.gameObject.GetComponent<MarioControllerScript>().addScore(100);
 			}
 			else if(canHit){
 				audio.PlayOneShot(bumped);
@@ -124,11 +127,13 @@ public class KoopaController : MonoBehaviour {
 					anim.SetBool("Hit", false);
 					hit = false;
 					rigidbody2D.velocity = new Vector2(0f, 0f);
+					collision.gameObject.GetComponent<MarioControllerScript>().addScore(100);
 				}
 				else{
 					anim.SetBool("Hit", true);
 					hit = true;
 					rigidbody2D.velocity = new Vector2(speed*4f, 0f);
+					collision.gameObject.GetComponent<MarioControllerScript>().addScore(400);
 				}
 			}
 		}
@@ -138,6 +143,8 @@ public class KoopaController : MonoBehaviour {
 			}
 			else if(collision.gameObject.name != "Mario" && collision.gameObject.name != "Goomba"
 			        && flipping == 0f && collision.gameObject.layer != LayerMask.NameToLayer("Camera")) 
+				Flip ();
+			else if(collision.gameObject.name == "Goomba" && !hit && flipping == 0f)
 				Flip ();
 			else if(collision.gameObject.name == "Mario" &&
 			        collision.gameObject.GetComponent<MarioControllerScript>().Invincible())
@@ -150,7 +157,9 @@ public class KoopaController : MonoBehaviour {
 	
 	public void KillKoopa(){
 		audio.PlayOneShot(bumped);
-		rigidbody2D.AddForce (new Vector2 (0f, 1000f));
+		anim.SetBool("Squished", true);
+		rigidbody2D.velocity = new Vector2(0f, 0f);
+		rigidbody2D.AddForce (new Vector2 (100f, 750f));
 		
 		Vector3 theScale = transform.localScale;
 		theScale.y *= -1;
@@ -164,7 +173,7 @@ public class KoopaController : MonoBehaviour {
 		
 		gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Front";
 		
-		GameObject.Find("Mario").GetComponent<MarioControllerScript>().addScore(100);
+		GameObject.Find("Mario").GetComponent<MarioControllerScript>().addScore(500);
 		
 		Invoke ("DestroyKoopa", 3);
 	}

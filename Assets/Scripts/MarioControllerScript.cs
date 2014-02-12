@@ -10,11 +10,12 @@ public class MarioControllerScript : MonoBehaviour {
 	private float 	maxRunSpeed = 10f;
 	private float	maxWalkSpeed = 5f;
 	private float	acc = 20f;
-	private float	dec = 20f;
+	private float	dec = 40f;
+	private float	decNatural = 15f;
 	private float	pipeSpeed = 2f;
 	private float	growTimer = 0.5f;
 	private float	fireTimer = 0.5f;
-	private float	starTimer = 11f;
+	private float	starTimer = 12f;
 	private float	fireballTimer = 0f;
 
 	public float	jumpForce = 500f;
@@ -66,6 +67,7 @@ public class MarioControllerScript : MonoBehaviour {
 	public AudioClip		starSound;
 	public AudioClip		gameMusic;
 	public AudioClip		oneupSound;
+	public AudioClip		fireballSound;
 
 	public RuntimeAnimatorController	smallController;
 	public RuntimeAnimatorController	largeController;
@@ -197,6 +199,10 @@ public class MarioControllerScript : MonoBehaviour {
 			audio.PlayOneShot(starSound);
 			invincible = true;
 			hitStar = false;
+			if(state == 0)
+				triggerCollider.size = new Vector2(1.25f, 0.8f);
+			else
+				triggerCollider.size = new Vector2(1.75f, 1.8f);
 			Invoke("DoneInvincible", starTimer);
 		}
 
@@ -209,7 +215,6 @@ public class MarioControllerScript : MonoBehaviour {
 		if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)){
 			if(state > 0){
 				headCollider.center = new Vector2(0f, 0.95f);
-				headCollider.size = new Vector2(0.01f, 0.01f);
 				triggerCollider.center = new Vector2(0f, 0.5f);
 				triggerCollider.size = new Vector2(0.75f, 0.8f);
 				middleCollider.center = new Vector2(0f, 0.5f);
@@ -220,7 +225,6 @@ public class MarioControllerScript : MonoBehaviour {
 		else{
 			if(state > 0){
 				headCollider.center = new Vector2(0f, 1.95f);
-				headCollider.size = new Vector2(0.01f, 0.01f);
 				triggerCollider.center = new Vector2(0f, 1.0f);
 				triggerCollider.size = new Vector2(1f, 1.8f);
 				middleCollider.center = new Vector2(0f, 1f);
@@ -272,6 +276,7 @@ public class MarioControllerScript : MonoBehaviour {
 			}
 			fireballCount++;
 			fireballTimer = 5f;
+			audio.PlayOneShot(fireballSound);
 			Instantiate(fireball, pos, Quaternion.identity);
 		}
 
@@ -290,27 +295,35 @@ public class MarioControllerScript : MonoBehaviour {
 			if(vel.x > 0) speed = -dec * Time.deltaTime;
 			else speed = dec * Time.deltaTime;
 		}
-
+		
 		if((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Comma))
-			&& Mathf.Abs(vel.x) < maxRunSpeed && grounded){
+		   && Mathf.Abs(vel.x) < maxRunSpeed && grounded){
 			speed = xAxisValue * acc * Time.deltaTime;
+			if(vel.x == 0f && xAxisValue > 0f) speed += 1f;
+			else if(vel.x == 0f && xAxisValue < 0f) speed += -1f;
 		}
-
+		
 		if(Mathf.Abs(xAxisValue) == 0f && vel.x != 0){
-			if(vel.x > 0) speed = -dec * Time.deltaTime;
-			else speed = dec * Time.deltaTime;
+			if(Mathf.Abs(vel.x) < maxWalkSpeed){
+				if(vel.x > 0) speed = -decNatural * Time.deltaTime;
+				else speed = decNatural * Time.deltaTime;
+			}
+			else{
+				if(vel.x > 0) speed = -dec * Time.deltaTime;
+				else speed = dec * Time.deltaTime;
+			}
 		}
-
+		
 		if(vel.x * xAxisValue < 0){
 			if(vel.x > 0) speed += -dec * Time.deltaTime;
 			else speed += dec * Time.deltaTime;
 		}
-
+		
 		if(!grounded && Mathf.Abs(vel.x) < baseSpeed){
 			if(xAxisValue > 0) speed = acc * Time.deltaTime;
 			else if(xAxisValue < 0) speed = -acc * Time.deltaTime;
 		}
-
+		
 		vel.x += speed;
 		if(Mathf.Abs(vel.x) < 0.15f) vel.x = 0f;
 		anim.SetFloat("Speed", Mathf.Abs(vel.x));
@@ -386,9 +399,9 @@ public class MarioControllerScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		if(collider.gameObject.layer == LayerMask.NameToLayer("Enemies")){
 			if(collider.gameObject.name == "Goomba"){
-				if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider && 
-				   !collider.gameObject.GetComponent<GoombaController>().squished &&
-				   !invincible){
+				if(invincible) collider.gameObject.GetComponent<GoombaController>().KillGoomba();
+				else if(collider == collider.gameObject.GetComponent<GoombaController>().bodyCollider && 
+				   !collider.gameObject.GetComponent<GoombaController>().squished){
 
 					if(transform.position.y > collider.gameObject.transform.position.y+0.9f){}
 					else if(state == 0) anim.SetBool("Death", true);
@@ -396,8 +409,8 @@ public class MarioControllerScript : MonoBehaviour {
 				}
 			}
 			else if(collider.gameObject.name == "GreenKoopa"){
-				if(collider == collider.gameObject.GetComponent<KoopaController>().bodyCollider && 
-				   !invincible){
+				if(invincible) collider.gameObject.GetComponent<KoopaController>().KillKoopa();
+				else if(collider == collider.gameObject.GetComponent<KoopaController>().bodyCollider){
 					
 					if(transform.position.y > collider.gameObject.transform.position.y+0.9f){}
 					else if(collider.gameObject.GetComponent<KoopaController>().squished &&
@@ -420,6 +433,9 @@ public class MarioControllerScript : MonoBehaviour {
 	
 	void OnTriggerStay2D(Collider2D collider){
 		if(collider.gameObject.tag == "Block"){
+			if(collider.gameObject.name == "HiddenBlock" &&
+			   !collider.gameObject.GetComponent<HiddenBlocks>().hit) return;
+
 			if(transform.position.x-collider.gameObject.transform.position.x > 0f){
 				float pos = transform.position.x-collider.gameObject.transform.position.x;
 				float force;
@@ -446,6 +462,10 @@ public class MarioControllerScript : MonoBehaviour {
 		invincible = false;
 		gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		mainCamera.audio.PlayOneShot(gameMusic);
+		if(state == 0)
+			triggerCollider.size = new Vector2(0.75f, 0.8f);
+		else
+			triggerCollider.size = new Vector2(1f, 1.8f);
 	}
 
 	void DoneShrinking(){
@@ -459,7 +479,6 @@ public class MarioControllerScript : MonoBehaviour {
 		if(state == 0){
 			anim.runtimeAnimatorController = smallController;
 			headCollider.center = new Vector2(0f, 0.95f);
-			headCollider.size = new Vector2(0.01f, 0.01f);
 			triggerCollider.center = new Vector2(0f, 0.5f);
 			triggerCollider.size = new Vector2(0.75f, 0.8f);
 			middleCollider.center = new Vector2(0f, 0.5f);
@@ -468,7 +487,6 @@ public class MarioControllerScript : MonoBehaviour {
 		else if(state == 1){
 			anim.runtimeAnimatorController = largeController;
 			headCollider.center = new Vector2(0f, 1.95f);
-			headCollider.size = new Vector2(0.01f, 0.01f);
 			triggerCollider.center = new Vector2(0f, 1.0f);
 			triggerCollider.size = new Vector2(1f, 1.8f);
 			middleCollider.center = new Vector2(0f, 1f);
@@ -477,7 +495,6 @@ public class MarioControllerScript : MonoBehaviour {
 		else{
 			anim.runtimeAnimatorController = fireController;
 			headCollider.center = new Vector2(0f, 1.95f);
-			headCollider.size = new Vector2(0.01f, 0.01f);
 			triggerCollider.center = new Vector2(0f, 1.0f);
 			triggerCollider.size = new Vector2(1f, 1.8f);
 			middleCollider.center = new Vector2(0f, 1f);
@@ -535,6 +552,10 @@ public class MarioControllerScript : MonoBehaviour {
 	public void addCoin(){
 		audio.PlayOneShot(coinSound);
 		numCoins++;
+		if(numCoins == 100f){
+			numCoins = 0;
+			addLife();		
+		}
 		score += 200;
 	}
 
@@ -575,6 +596,10 @@ public class MarioControllerScript : MonoBehaviour {
 
 	public bool Invincible(){
 		return invincible;
+	}
+
+	public void SubtractFireball(){
+		fireballCount--;
 	}
 
 	public void SpeedMusic(){

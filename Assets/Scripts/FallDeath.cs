@@ -17,6 +17,7 @@ public class FallDeath : MonoBehaviour {
 		if(collision.gameObject.name == "Mario"){
 			collision.gameObject.GetComponent<MarioControllerScript>().anim.SetBool("Death", true);
 		}
-		else Destroy(collision.gameObject);
+		else if(collision.gameObject.name != "FireBall(Clone)")
+			Destroy(collision.gameObject);
 	}
 }
